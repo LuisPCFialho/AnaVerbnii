@@ -149,14 +149,14 @@
                     <!-- Language Switcher -->
                     <div class="relative">
                         <button id="langBtn" class="flex items-center space-x-1 text-sm font-medium hover:text-primary-500 transition-colors px-2 py-1 rounded-md">
-                            <span id="currentFlag">🇵🇹</span>
+                            <img id="currentFlag" src="https://flagcdn.com/w40/pt.png" alt="PT" class="w-6 h-4 rounded-sm object-cover">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                         </button>
-                        <div id="langMenu" class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1 z-50">
-                            <button onclick="setLanguage('pt')" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">🇵🇹 Português</button>
-                            <button onclick="setLanguage('en')" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">🇬🇧 English</button>
-                            <button onclick="setLanguage('ro')" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">🇷🇴 Română</button>
-                            <button onclick="setLanguage('ru')" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">🇷🇺 Русский</button>
+                        <div id="langMenu" class="hidden absolute right-0 mt-2 w-44 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1 z-50">
+                            <button onclick="setLanguage('pt')" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2"><img src="https://flagcdn.com/w40/pt.png" class="w-6 h-4 rounded-sm object-cover"><span>Português</span></button>
+                            <button onclick="setLanguage('en')" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2"><img src="https://flagcdn.com/w40/gb.png" class="w-6 h-4 rounded-sm object-cover"><span>English</span></button>
+                            <button onclick="setLanguage('ro')" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2"><img src="https://flagcdn.com/w40/ro.png" class="w-6 h-4 rounded-sm object-cover"><span>Română</span></button>
+                            <button onclick="setLanguage('ru')" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center space-x-2"><img src="https://flagcdn.com/w40/ru.png" class="w-6 h-4 rounded-sm object-cover"><span>Русский</span></button>
                         </div>
                     </div>
 
@@ -180,10 +180,10 @@
                 <a href="#languages" class="block px-3 py-2 text-sm font-medium rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" data-translate="nav_languages" onclick="toggleMobileMenu()">Idiomas</a>
                 <a href="#contact" class="block px-3 py-2 text-sm font-medium rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" data-translate="nav_contact" onclick="toggleMobileMenu()">Contacto</a>
                 <div class="flex items-center space-x-3 px-3 pt-2 border-t border-gray-200 dark:border-gray-700">
-                    <button onclick="setLanguage('pt')" class="text-lg">🇵🇹</button>
-                    <button onclick="setLanguage('en')" class="text-lg">🇬🇧</button>
-                    <button onclick="setLanguage('ro')" class="text-lg">🇷🇴</button>
-                    <button onclick="setLanguage('ru')" class="text-lg">🇷🇺</button>
+                    <button onclick="setLanguage('pt')"><img src="https://flagcdn.com/w40/pt.png" class="w-7 h-5 rounded-sm object-cover"></button>
+                    <button onclick="setLanguage('en')"><img src="https://flagcdn.com/w40/gb.png" class="w-7 h-5 rounded-sm object-cover"></button>
+                    <button onclick="setLanguage('ro')"><img src="https://flagcdn.com/w40/ro.png" class="w-7 h-5 rounded-sm object-cover"></button>
+                    <button onclick="setLanguage('ru')"><img src="https://flagcdn.com/w40/ru.png" class="w-7 h-5 rounded-sm object-cover"></button>
                     <button onclick="toggleDarkMode()" class="ml-auto p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
                         <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
                         <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
@@ -826,14 +826,14 @@
             }
         };
 
-        const flags = { pt: '🇵🇹', en: '🇬🇧', ro: '🇷🇴', ru: '🇷🇺' };
+        const flagUrls = { pt: 'https://flagcdn.com/w40/pt.png', en: 'https://flagcdn.com/w40/gb.png', ro: 'https://flagcdn.com/w40/ro.png', ru: 'https://flagcdn.com/w40/ru.png' };
         let currentLang = localStorage.getItem('lang') || 'pt';
 
         function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('lang', lang);
             document.documentElement.lang = lang;
-            document.getElementById('currentFlag').textContent = flags[lang];
+            document.getElementById('currentFlag').src = flagUrls[lang];
             document.getElementById('langMenu').classList.add('hidden');
             const t = translations[lang];
             document.querySelectorAll('[data-translate]').forEach(el => {
