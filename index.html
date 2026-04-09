@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="pt" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana-Maria Verbnii | Currículo</title>
+    <meta name="description" content="Ana-Maria Verbnii - Assistente Administrativa e Financeira com experiência em gestão, hotelaria e finanças.">
+    <link rel="icon" href="Foto curriculo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: { 50: '#fdf2f8', 100: '#fce7f3', 200: '#fbcfe8', 300: '#f9a8d4', 400: '#f472b6', 500: '#ec4899', 600: '#db2777', 700: '#be185d', 800: '#9d174d', 900: '#831843' },
+                        accent: { 50: '#f0fdfa', 100: '#ccfbf1', 200: '#99f6e4', 300: '#5eead4', 400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 700: '#0f766e', 800: '#115e59', 900: '#134e4a' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdf2f8;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        html.dark body {
+            background-color: #1a1a2e;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .interactive-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .interactive-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        html.dark .interactive-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .timeline-line {
+            position: absolute;
+            left: 1.25rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #f472b6, #14b8a6);
+        }
+        html.dark .timeline-line {
+            background: linear-gradient(to bottom, #db2777, #0d9488);
+        }
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ec4899, #14b8a6);
+            position: absolute;
+            left: calc(1.25rem - 5px);
+            top: 0.5rem;
+            z-index: 1;
+        }
+        .skill-tag {
+            display: inline-block;
+            padding: 0.375rem 0.875rem;
+            border-radius: 9999px;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+        .lang-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: #e5e7eb;
+            overflow: hidden;
+        }
+        html.dark .lang-bar {
+            background: #374151;
+        }
+        .lang-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #ec4899, #14b8a6);
+            transition: width 1s ease;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 50%;
+            border: 4px solid #ec4899;
+            box-shadow: 0 0 30px rgba(236, 72, 153, 0.3);
+        }
+        html.dark .profile-img {
+            border-color: #db2777;
+            box-shadow: 0 0 30px rgba(219, 39, 119, 0.3);
+        }
+        .hamburger-line {
+            transition: all 0.3s ease;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            .fade-in-section { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body class="text-gray-800 dark:text-gray-200 min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="sticky-nav bg-white/80 dark:bg-gray-900/80 shadow-sm no-print">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="text-lg font-bold bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
+                    Ana-Maria Verbnii
+                </a>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="text-sm font-medium hover:text-primary-500 transition-colors" data-translate="nav_about">Sobre</a>
+                    <a href="#experience" class="text-sm font-medium hover:text-primary-500 transition-colors" data-translate="nav_experience">Experiência</a>
+                    <a href="#skills" class="text-sm font-medium hover:text-primary-500 transition-colors" data-translate="nav_skills">Competências</a>
+                    <a href="#education" class="text-sm font-medium hover:text-primary-500 transition-colors" data-translate="nav_education">Formação</a>
+                    <a href="#languages" class="text-sm font-medium hover:text-primary-500 transition-colors" data-translate="nav_languages">Idiomas</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-primary-500 transition-colors" data-translate="nav_contact">Contacto</a>
+
+                    <!-- Language Switcher -->
+                    <div class="relative">
+                        <button id="langBtn" class="flex items-center space-x-1 text-sm font-medium hover:text-primary-500 transition-colors px-2 py-1 rounded-md">
+                            <span id="currentFlag">🇵🇹</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div id="langMenu" class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1 z-50">
+                            <button onclick="setLanguage('pt')" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">🇵🇹 Português</button>
+                            <button onclick="setLanguage('en')" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">🇬🇧 English</button>
+                            <button onclick="setLanguage('ro')" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">🇷🇴 Română</button>
+                            <button onclick="setLanguage('ru')" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700">🇷🇺 Русский</button>
+                        </div>
+                    </div>
+
+                    <!-- Dark Mode Toggle -->
+                    <button id="darkToggle" onclick="toggleDarkMode()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <svg id="sunIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                        <svg id="moonIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    </button>
+                </div>
+                <!-- Mobile Hamburger -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4 space-y-2">
+                <a href="#about" class="block px-3 py-2 text-sm font-medium rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" data-translate="nav_about" onclick="toggleMobileMenu()">Sobre</a>
+                <a href="#experience" class="block px-3 py-2 text-sm font-medium rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" data-translate="nav_experience" onclick="toggleMobileMenu()">Experiência</a>
+                <a href="#skills" class="block px-3 py-2 text-sm font-medium rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" data-translate="nav_skills" onclick="toggleMobileMenu()">Competências</a>
+                <a href="#education" class="block px-3 py-2 text-sm font-medium rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" data-translate="nav_education" onclick="toggleMobileMenu()">Formação</a>
+                <a href="#languages" class="block px-3 py-2 text-sm font-medium rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" data-translate="nav_languages" onclick="toggleMobileMenu()">Idiomas</a>
+                <a href="#contact" class="block px-3 py-2 text-sm font-medium rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" data-translate="nav_contact" onclick="toggleMobileMenu()">Contacto</a>
+                <div class="flex items-center space-x-3 px-3 pt-2 border-t border-gray-200 dark:border-gray-700">
+                    <button onclick="setLanguage('pt')" class="text-lg">🇵🇹</button>
+                    <button onclick="setLanguage('en')" class="text-lg">🇬🇧</button>
+                    <button onclick="setLanguage('ro')" class="text-lg">🇷🇴</button>
+                    <button onclick="setLanguage('ru')" class="text-lg">🇷🇺</button>
+                    <button onclick="toggleDarkMode()" class="ml-auto p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                        <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+
+        <!-- Header Section -->
+        <section class="fade-in-section text-center py-12">
+            <img src="Foto curriculo.png" alt="Ana-Maria Verbnii" class="profile-img mx-auto mb-6">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-3 bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
+                Ana-Maria Verbnii
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 mb-2" data-translate="header_title">Assistente Administrativa e Financeira</p>
+            <p class="text-sm text-gray-500 dark:text-gray-500">
+                <span data-translate="header_location">Vendas Novas, Évora, Portugal</span>
+            </p>
+            <p class="mt-4 text-lg italic text-primary-500 dark:text-primary-400" data-translate="header_tagline">"Organização, Rigor e Dedicação"</p>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="fade-in-section mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-8 h-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mr-3"></span>
+                <span data-translate="about_title">Sobre Mim</span>
+            </h2>
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-sm interactive-card">
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-justify" data-translate="about_text">
+                    Profissional administrativa e financeira com mais de 8 anos de experiência em diversos setores, incluindo energias renováveis, agricultura, produção vinícola e hotelaria. Possuo competências sólidas em gestão de clientes e fornecedores, faturação, controlo financeiro e apoio administrativo. Destaco-me pela capacidade de organização, rigor no cumprimento de prazos e facilidade de adaptação a novos ambientes e desafios. Fluente em Português, Romeno, Inglês e Russo, com conhecimentos de Espanhol e Ucraniano.
+                </p>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="fade-in-section mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-8 h-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mr-3"></span>
+                <span data-translate="exp_title">Experiência Profissional</span>
+            </h2>
+            <div class="relative pl-10">
+                <div class="timeline-line"></div>
+
+                <!-- Iberglobal -->
+                <div class="relative mb-8 fade-in-section">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp1_role">Administrativo</h3>
+                                <p class="text-primary-500 font-semibold">Iberglobal powered by MCA</p>
+                            </div>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp1_date">março 2025 - Presente</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Vendas Novas, Évora, Portugal</p>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm" data-translate="exp1_desc">Gestão administrativa geral, apoio à operação e controlo documental numa empresa de serviços integrados.</p>
+                    </div>
+                </div>
+
+                <!-- PowerYield - Financial -->
+                <div class="relative mb-8 fade-in-section">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp2_role">Assistente Administrativo Financeiro</h3>
+                                <p class="text-primary-500 font-semibold">PowerYield</p>
+                            </div>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp2_date">maio 2023 - fevereiro 2025</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Montemor-o-Novo, Évora, Portugal</p>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm" data-translate="exp2_desc">Gestão financeira e administrativa, faturação, controlo de contas a pagar e receber, reconciliações bancárias, gestão de fornecedores e apoio contabilístico numa empresa do setor de energias renováveis.</p>
+                    </div>
+                </div>
+
+                <!-- PowerYield - Technical -->
+                <div class="relative mb-8 fade-in-section">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp3_role">Assistente Técnico Administrativa</h3>
+                                <p class="text-primary-500 font-semibold">PowerYield</p>
+                            </div>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp3_date">abril 2022 - maio 2023</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Montemor-o-Novo, Évora, Portugal</p>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm" data-translate="exp3_desc">Apoio técnico-administrativo, gestão documental de projetos fotovoltaicos, coordenação com clientes e fornecedores, e suporte à equipa de engenharia.</p>
+                    </div>
+                </div>
+
+                <!-- Agrovisul -->
+                <div class="relative mb-8 fade-in-section">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp4_role">Assistente Administrativa e Financeira</h3>
+                                <p class="text-primary-500 font-semibold">Agrovisul</p>
+                            </div>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp4_date">outubro 2021 - abril 2022</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Évora, Portugal</p>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm" data-translate="exp4_desc">Gestão administrativa e financeira no setor agrícola, incluindo faturação, controlo de fornecedores e apoio contabilístico.</p>
+                    </div>
+                </div>
+
+                <!-- Casa Relvas -->
+                <div class="relative mb-8 fade-in-section">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp5_role">Assistente Administrativa</h3>
+                                <p class="text-primary-500 font-semibold">Casa Relvas</p>
+                            </div>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp5_date">fevereiro 2019 - outubro 2021</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">São Miguel de Machede, Évora</p>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm" data-translate="exp5_desc">Apoio administrativo numa empresa vinícola de referência, gestão de encomendas, faturação, contacto com clientes nacionais e internacionais e organização documental.</p>
+                    </div>
+                </div>
+
+                <!-- Évora Hotel -->
+                <div class="relative mb-8 fade-in-section">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp6_role">Rececionista de Front Office e Assistente de Back Office</h3>
+                                <p class="text-primary-500 font-semibold">Évora Hotel</p>
+                            </div>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp6_date">fevereiro 2017 - novembro 2018</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Évora, Portugal</p>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm" data-translate="exp6_desc">Atendimento ao público, check-in/check-out, gestão de reservas, faturação hoteleira e apoio administrativo de back office.</p>
+                    </div>
+                </div>
+
+                <!-- M'AR De AR Hotels -->
+                <div class="relative mb-8 fade-in-section">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp7a_role">Recepcionista de Hotel</h3>
+                                <p class="text-primary-500 font-semibold">M'AR De AR Hotels</p>
+                            </div>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp7a_date">agosto 2017 - novembro 2017</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Évora, Portugal</p>
+                        <div class="mt-3 pt-3 border-t border-gray-100 dark:border-gray-700">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp7b_role">Gerente Comercial e Departamento de Reservas</h3>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" data-translate="exp7b_date">maio 2017 - agosto 2017</span>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm mt-3" data-translate="exp7_desc">Gestão de reservas, receção de hóspedes, apoio comercial e coordenação do departamento de reservas num hotel de charme em Évora.</p>
+                    </div>
+                </div>
+
+                <!-- O Pelourinho -->
+                <div class="relative mb-8 fade-in-section">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp8_role">Garçom</h3>
+                                <p class="text-primary-500 font-semibold">O Pelourinho</p>
+                            </div>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp8_date">maio 2016 - dezembro 2016</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Arraiolos, Évora, Portugal</p>
+                    </div>
+                </div>
+
+                <!-- O Gingão -->
+                <div class="relative mb-0 fade-in-section">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp9_role">Técnico de Bar</h3>
+                                <p class="text-primary-500 font-semibold">O Gingão</p>
+                            </div>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp9_date">junho 2015 - abril 2016</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Arraiolos, Évora, Portugal</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="fade-in-section mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-8 h-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mr-3"></span>
+                <span data-translate="skills_title">Competências</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Administrative -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="text-xl mr-2">📋</span>
+                        <span data-translate="skills_admin">Administração e Gestão</span>
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300" data-translate="skill_client_mgmt">Gestão de Clientes e Fornecedores</span>
+                        <span class="skill-tag bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300" data-translate="skill_invoicing">Faturação</span>
+                        <span class="skill-tag bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300" data-translate="skill_doc_mgmt">Gestão Documental</span>
+                        <span class="skill-tag bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300" data-translate="skill_admin_support">Assistência Administrativa</span>
+                        <span class="skill-tag bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300" data-translate="skill_bank_rec">Reconciliações Bancárias</span>
+                        <span class="skill-tag bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300" data-translate="skill_accounting">Apoio Contabilístico</span>
+                    </div>
+                </div>
+                <!-- Software -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="text-xl mr-2">💻</span>
+                        <span data-translate="skills_software">Software e Ferramentas</span>
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-accent-100 text-accent-700 dark:bg-accent-900/30 dark:text-accent-300">Microsoft Office</span>
+                        <span class="skill-tag bg-accent-100 text-accent-700 dark:bg-accent-900/30 dark:text-accent-300">Excel</span>
+                        <span class="skill-tag bg-accent-100 text-accent-700 dark:bg-accent-900/30 dark:text-accent-300">Word</span>
+                        <span class="skill-tag bg-accent-100 text-accent-700 dark:bg-accent-900/30 dark:text-accent-300">Outlook</span>
+                        <span class="skill-tag bg-accent-100 text-accent-700 dark:bg-accent-900/30 dark:text-accent-300">Teams</span>
+                    </div>
+                </div>
+                <!-- Hospitality -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="text-xl mr-2">🏨</span>
+                        <span data-translate="skills_hospitality">Hotelaria e Turismo</span>
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300" data-translate="skill_reception">Receção</span>
+                        <span class="skill-tag bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300" data-translate="skill_checkin">Check-in / Check-out</span>
+                        <span class="skill-tag bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300" data-translate="skill_reservations">Gestão de Reservas</span>
+                        <span class="skill-tag bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300" data-translate="skill_customer">Atendimento ao Cliente</span>
+                        <span class="skill-tag bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300" data-translate="skill_commercial">Gestão Comercial</span>
+                    </div>
+                </div>
+                <!-- Soft Skills -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                        <span class="text-xl mr-2">🌟</span>
+                        <span data-translate="skills_soft">Competências Pessoais</span>
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300" data-translate="skill_organization">Organização</span>
+                        <span class="skill-tag bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300" data-translate="skill_rigor">Rigor</span>
+                        <span class="skill-tag bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300" data-translate="skill_adaptability">Adaptabilidade</span>
+                        <span class="skill-tag bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300" data-translate="skill_teamwork">Trabalho em Equipa</span>
+                        <span class="skill-tag bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300" data-translate="skill_multilingual">Multilinguismo</span>
+                        <span class="skill-tag bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300" data-translate="skill_proactive">Proatividade</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="fade-in-section mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-8 h-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mr-3"></span>
+                <span data-translate="cert_title">Certificações</span>
+            </h2>
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                <div class="flex items-center">
+                    <span class="text-2xl mr-4">📜</span>
+                    <div>
+                        <h3 class="font-bold text-gray-900 dark:text-white" data-translate="cert1_name">Curso de Formação Profissional de Finanças para Não Financeiros</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="fade-in-section mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-8 h-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mr-3"></span>
+                <span data-translate="edu_title">Formação Académica</span>
+            </h2>
+            <div class="space-y-4">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4 mt-1">🎓</span>
+                        <div>
+                            <h3 class="font-bold text-gray-900 dark:text-white" data-translate="edu1_school">EPRAL - Escola Profissional da Região Alentejo</h3>
+                            <p class="text-primary-500 font-medium" data-translate="edu1_course">Curso Técnico de Turismo e Hotelaria</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400" data-translate="edu1_date">setembro 2014 - julho 2017</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm interactive-card">
+                    <div class="flex items-start">
+                        <span class="text-2xl mr-4 mt-1">🏫</span>
+                        <div>
+                            <h3 class="font-bold text-gray-900 dark:text-white" data-translate="edu2_school">Escola C+S Cunha Rivara - Arraiolos</h3>
+                            <p class="text-primary-500 font-medium" data-translate="edu2_course">Ensino Secundário</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400" data-translate="edu2_date">setembro 2002 - julho 2014</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages -->
+        <section id="languages" class="fade-in-section mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-8 h-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mr-3"></span>
+                <span data-translate="lang_title">Idiomas</span>
+            </h2>
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-sm interactive-card">
+                <div class="space-y-5">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium" data-translate="lang_pt">🇵🇹 Português</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" data-translate="lang_pt_level">Nativo / Bilingue</span>
+                        </div>
+                        <div class="lang-bar"><div class="lang-fill" style="width: 100%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium" data-translate="lang_ro">🇷🇴 Romeno</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" data-translate="lang_ro_level">Nativo / Bilingue</span>
+                        </div>
+                        <div class="lang-bar"><div class="lang-fill" style="width: 100%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium" data-translate="lang_en">🇬🇧 Inglês</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" data-translate="lang_en_level">Profissional</span>
+                        </div>
+                        <div class="lang-bar"><div class="lang-fill" style="width: 80%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium" data-translate="lang_ru">🇷🇺 Russo</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" data-translate="lang_ru_level">Profissional</span>
+                        </div>
+                        <div class="lang-bar"><div class="lang-fill" style="width: 80%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium" data-translate="lang_es">🇪🇸 Espanhol</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" data-translate="lang_es_level">Elementar</span>
+                        </div>
+                        <div class="lang-bar"><div class="lang-fill" style="width: 40%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium" data-translate="lang_uk">🇺🇦 Ucraniano</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400" data-translate="lang_uk_level">Elementar</span>
+                        </div>
+                        <div class="lang-bar"><div class="lang-fill" style="width: 30%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="fade-in-section mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-8 h-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mr-3"></span>
+                <span data-translate="contact_title">Contacto</span>
+            </h2>
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-sm interactive-card text-center">
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-6" data-translate="contact_text">Interessado em entrar em contacto?</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://www.linkedin.com/in/anaverbnii" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center px-6 py-3 bg-[#0077B5] text-white rounded-full font-medium hover:bg-[#005f8d] transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="CV Ana-Maria Verbnii.pdf" download
+                       class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 to-accent-500 text-white rounded-full font-medium hover:from-primary-600 hover:to-accent-600 transition-all">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        <span data-translate="contact_download">Download CV</span>
+                    </a>
+                    <a href="mailto:verbnii_24@hotmail.com"
+                       class="inline-flex items-center px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        verbnii_24@hotmail.com
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800">
+        <p>&copy; 2025 Ana-Maria Verbnii. <span data-translate="footer_rights">Todos os direitos reservados.</span></p>
+    </footer>
+
+    <script>
+        // Translations
+        const translations = {
+            pt: {
+                nav_about: 'Sobre', nav_experience: 'Experiência', nav_skills: 'Competências',
+                nav_education: 'Formação', nav_languages: 'Idiomas', nav_contact: 'Contacto',
+                header_title: 'Assistente Administrativa e Financeira',
+                header_location: 'Vendas Novas, Évora, Portugal',
+                header_tagline: '"Organização, Rigor e Dedicação"',
+                about_title: 'Sobre Mim',
+                about_text: 'Profissional administrativa e financeira com mais de 8 anos de experiência em diversos setores, incluindo energias renováveis, agricultura, produção vinícola e hotelaria. Possuo competências sólidas em gestão de clientes e fornecedores, faturação, controlo financeiro e apoio administrativo. Destaco-me pela capacidade de organização, rigor no cumprimento de prazos e facilidade de adaptação a novos ambientes e desafios. Fluente em Português, Romeno, Inglês e Russo, com conhecimentos de Espanhol e Ucraniano.',
+                exp_title: 'Experiência Profissional',
+                exp1_role: 'Administrativo', exp1_date: 'março 2025 - Presente',
+                exp1_desc: 'Gestão administrativa geral, apoio à operação e controlo documental numa empresa de serviços integrados.',
+                exp2_role: 'Assistente Administrativo Financeiro', exp2_date: 'maio 2023 - fevereiro 2025',
+                exp2_desc: 'Gestão financeira e administrativa, faturação, controlo de contas a pagar e receber, reconciliações bancárias, gestão de fornecedores e apoio contabilístico numa empresa do setor de energias renováveis.',
+                exp3_role: 'Assistente Técnico Administrativa', exp3_date: 'abril 2022 - maio 2023',
+                exp3_desc: 'Apoio técnico-administrativo, gestão documental de projetos fotovoltaicos, coordenação com clientes e fornecedores, e suporte à equipa de engenharia.',
+                exp4_role: 'Assistente Administrativa e Financeira', exp4_date: 'outubro 2021 - abril 2022',
+                exp4_desc: 'Gestão administrativa e financeira no setor agrícola, incluindo faturação, controlo de fornecedores e apoio contabilístico.',
+                exp5_role: 'Assistente Administrativa', exp5_date: 'fevereiro 2019 - outubro 2021',
+                exp5_desc: 'Apoio administrativo numa empresa vinícola de referência, gestão de encomendas, faturação, contacto com clientes nacionais e internacionais e organização documental.',
+                exp6_role: 'Rececionista de Front Office e Assistente de Back Office', exp6_date: 'fevereiro 2017 - novembro 2018',
+                exp6_desc: 'Atendimento ao público, check-in/check-out, gestão de reservas, faturação hoteleira e apoio administrativo de back office.',
+                exp7a_role: 'Recepcionista de Hotel', exp7a_date: 'agosto 2017 - novembro 2017',
+                exp7b_role: 'Gerente Comercial e Departamento de Reservas', exp7b_date: 'maio 2017 - agosto 2017',
+                exp7_desc: 'Gestão de reservas, receção de hóspedes, apoio comercial e coordenação do departamento de reservas num hotel de charme em Évora.',
+                exp8_role: 'Garçom', exp8_date: 'maio 2016 - dezembro 2016',
+                exp9_role: 'Técnico de Bar', exp9_date: 'junho 2015 - abril 2016',
+                skills_title: 'Competências', skills_admin: 'Administração e Gestão',
+                skill_client_mgmt: 'Gestão de Clientes e Fornecedores', skill_invoicing: 'Faturação',
+                skill_doc_mgmt: 'Gestão Documental', skill_admin_support: 'Assistência Administrativa',
+                skill_bank_rec: 'Reconciliações Bancárias', skill_accounting: 'Apoio Contabilístico',
+                skills_software: 'Software e Ferramentas',
+                skills_hospitality: 'Hotelaria e Turismo',
+                skill_reception: 'Receção', skill_checkin: 'Check-in / Check-out',
+                skill_reservations: 'Gestão de Reservas', skill_customer: 'Atendimento ao Cliente',
+                skill_commercial: 'Gestão Comercial',
+                skills_soft: 'Competências Pessoais',
+                skill_organization: 'Organização', skill_rigor: 'Rigor',
+                skill_adaptability: 'Adaptabilidade', skill_teamwork: 'Trabalho em Equipa',
+                skill_multilingual: 'Multilinguismo', skill_proactive: 'Proatividade',
+                cert_title: 'Certificações',
+                cert1_name: 'Curso de Formação Profissional de Finanças para Não Financeiros',
+                edu_title: 'Formação Académica',
+                edu1_school: 'EPRAL - Escola Profissional da Região Alentejo',
+                edu1_course: 'Curso Técnico de Turismo e Hotelaria', edu1_date: 'setembro 2014 - julho 2017',
+                edu2_school: 'Escola C+S Cunha Rivara - Arraiolos',
+                edu2_course: 'Ensino Secundário', edu2_date: 'setembro 2002 - julho 2014',
+                lang_title: 'Idiomas',
+                lang_pt: '🇵🇹 Português', lang_pt_level: 'Nativo / Bilingue',
+                lang_ro: '🇷🇴 Romeno', lang_ro_level: 'Nativo / Bilingue',
+                lang_en: '🇬🇧 Inglês', lang_en_level: 'Profissional',
+                lang_ru: '🇷🇺 Russo', lang_ru_level: 'Profissional',
+                lang_es: '🇪🇸 Espanhol', lang_es_level: 'Elementar',
+                lang_uk: '🇺🇦 Ucraniano', lang_uk_level: 'Elementar',
+                contact_title: 'Contacto',
+                contact_text: 'Interessado em entrar em contacto?',
+                contact_download: 'Download CV',
+                footer_rights: 'Todos os direitos reservados.'
+            },
+            en: {
+                nav_about: 'About', nav_experience: 'Experience', nav_skills: 'Skills',
+                nav_education: 'Education', nav_languages: 'Languages', nav_contact: 'Contact',
+                header_title: 'Administrative and Financial Assistant',
+                header_location: 'Vendas Novas, Évora, Portugal',
+                header_tagline: '"Organization, Precision and Dedication"',
+                about_title: 'About Me',
+                about_text: 'Administrative and financial professional with over 8 years of experience across diverse sectors, including renewable energy, agriculture, wine production, and hospitality. I have strong skills in client and supplier management, invoicing, financial control, and administrative support. I stand out for my organizational ability, deadline compliance, and ease of adaptation to new environments and challenges. Fluent in Portuguese, Romanian, English, and Russian, with knowledge of Spanish and Ukrainian.',
+                exp_title: 'Professional Experience',
+                exp1_role: 'Administrative Officer', exp1_date: 'March 2025 - Present',
+                exp1_desc: 'General administrative management, operational support and document control at an integrated services company.',
+                exp2_role: 'Financial Administrative Assistant', exp2_date: 'May 2023 - February 2025',
+                exp2_desc: 'Financial and administrative management, invoicing, accounts payable and receivable control, bank reconciliations, supplier management and accounting support in a renewable energy company.',
+                exp3_role: 'Technical Administrative Assistant', exp3_date: 'April 2022 - May 2023',
+                exp3_desc: 'Technical-administrative support, document management for photovoltaic projects, client and supplier coordination, and engineering team support.',
+                exp4_role: 'Administrative and Financial Assistant', exp4_date: 'October 2021 - April 2022',
+                exp4_desc: 'Administrative and financial management in the agricultural sector, including invoicing, supplier control and accounting support.',
+                exp5_role: 'Administrative Assistant', exp5_date: 'February 2019 - October 2021',
+                exp5_desc: 'Administrative support at a leading wine company, order management, invoicing, national and international client relations, and document organization.',
+                exp6_role: 'Front Office Receptionist and Back Office Assistant', exp6_date: 'February 2017 - November 2018',
+                exp6_desc: 'Guest reception, check-in/check-out, reservation management, hotel invoicing and back office administrative support.',
+                exp7a_role: 'Hotel Receptionist', exp7a_date: 'August 2017 - November 2017',
+                exp7b_role: 'Commercial Manager and Reservations Department', exp7b_date: 'May 2017 - August 2017',
+                exp7_desc: 'Reservation management, guest reception, commercial support and reservations department coordination at a boutique hotel in Évora.',
+                exp8_role: 'Waiter', exp8_date: 'May 2016 - December 2016',
+                exp9_role: 'Bar Technician', exp9_date: 'June 2015 - April 2016',
+                skills_title: 'Skills', skills_admin: 'Administration & Management',
+                skill_client_mgmt: 'Client & Supplier Management', skill_invoicing: 'Invoicing',
+                skill_doc_mgmt: 'Document Management', skill_admin_support: 'Administrative Assistance',
+                skill_bank_rec: 'Bank Reconciliations', skill_accounting: 'Accounting Support',
+                skills_software: 'Software & Tools',
+                skills_hospitality: 'Hospitality & Tourism',
+                skill_reception: 'Reception', skill_checkin: 'Check-in / Check-out',
+                skill_reservations: 'Reservation Management', skill_customer: 'Customer Service',
+                skill_commercial: 'Commercial Management',
+                skills_soft: 'Soft Skills',
+                skill_organization: 'Organization', skill_rigor: 'Precision',
+                skill_adaptability: 'Adaptability', skill_teamwork: 'Teamwork',
+                skill_multilingual: 'Multilingualism', skill_proactive: 'Proactivity',
+                cert_title: 'Certifications',
+                cert1_name: 'Professional Training Course in Finance for Non-Financial Professionals',
+                edu_title: 'Education',
+                edu1_school: 'EPRAL - Professional School of the Alentejo Region',
+                edu1_course: 'Technical Course in Tourism and Hospitality', edu1_date: 'September 2014 - July 2017',
+                edu2_school: 'Escola C+S Cunha Rivara - Arraiolos',
+                edu2_course: 'Secondary Education', edu2_date: 'September 2002 - July 2014',
+                lang_title: 'Languages',
+                lang_pt: '🇵🇹 Portuguese', lang_pt_level: 'Native / Bilingual',
+                lang_ro: '🇷🇴 Romanian', lang_ro_level: 'Native / Bilingual',
+                lang_en: '🇬🇧 English', lang_en_level: 'Professional Working',
+                lang_ru: '🇷🇺 Russian', lang_ru_level: 'Professional Working',
+                lang_es: '🇪🇸 Spanish', lang_es_level: 'Limited Working',
+                lang_uk: '🇺🇦 Ukrainian', lang_uk_level: 'Elementary',
+                contact_title: 'Contact',
+                contact_text: 'Interested in getting in touch?',
+                contact_download: 'Download CV',
+                footer_rights: 'All rights reserved.'
+            },
+            ro: {
+                nav_about: 'Despre', nav_experience: 'Experiență', nav_skills: 'Competențe',
+                nav_education: 'Educație', nav_languages: 'Limbi', nav_contact: 'Contact',
+                header_title: 'Asistentă Administrativă și Financiară',
+                header_location: 'Vendas Novas, Évora, Portugalia',
+                header_tagline: '"Organizare, Rigoare și Dedicare"',
+                about_title: 'Despre Mine',
+                about_text: 'Profesionistă în domeniul administrativ și financiar, cu peste 8 ani de experiență în diverse sectoare, inclusiv energii regenerabile, agricultură, producție viticolă și turism hotelier. Dețin competențe solide în gestionarea clienților și furnizorilor, facturare, control financiar și suport administrativ. Mă remarc prin capacitatea de organizare, rigurozitate în respectarea termenelor și ușurință în adaptarea la medii și provocări noi. Fluente în Portugheză, Română, Engleză și Rusă, cu cunoștințe de Spaniolă și Ucraineană.',
+                exp_title: 'Experiență Profesională',
+                exp1_role: 'Administrativ', exp1_date: 'martie 2025 - Prezent',
+                exp1_desc: 'Management administrativ general, suport operațional și control documental într-o companie de servicii integrate.',
+                exp2_role: 'Asistentă Administrativă Financiară', exp2_date: 'mai 2023 - februarie 2025',
+                exp2_desc: 'Management financiar și administrativ, facturare, controlul conturilor de plătit și de încasat, reconcilieri bancare, gestionarea furnizorilor și suport contabil într-o companie de energie regenerabilă.',
+                exp3_role: 'Asistentă Tehnică Administrativă', exp3_date: 'aprilie 2022 - mai 2023',
+                exp3_desc: 'Suport tehnic-administrativ, gestionare documente pentru proiecte fotovoltaice, coordonare cu clienți și furnizori, și suport pentru echipa de inginerie.',
+                exp4_role: 'Asistentă Administrativă și Financiară', exp4_date: 'octombrie 2021 - aprilie 2022',
+                exp4_desc: 'Management administrativ și financiar în sectorul agricol, inclusiv facturare, controlul furnizorilor și suport contabil.',
+                exp5_role: 'Asistentă Administrativă', exp5_date: 'februarie 2019 - octombrie 2021',
+                exp5_desc: 'Suport administrativ într-o companie viticolă de referință, gestionarea comenzilor, facturare, relații cu clienți naționali și internaționali și organizare documente.',
+                exp6_role: 'Recepționeră Front Office și Asistentă Back Office', exp6_date: 'februarie 2017 - noiembrie 2018',
+                exp6_desc: 'Primirea oaspeților, check-in/check-out, gestionarea rezervărilor, facturare hotelieră și suport administrativ de back office.',
+                exp7a_role: 'Recepționeră de Hotel', exp7a_date: 'august 2017 - noiembrie 2017',
+                exp7b_role: 'Manager Comercial și Departamentul de Rezervări', exp7b_date: 'mai 2017 - august 2017',
+                exp7_desc: 'Gestionarea rezervărilor, primirea oaspeților, suport comercial și coordonarea departamentului de rezervări într-un hotel boutique din Évora.',
+                exp8_role: 'Chelner', exp8_date: 'mai 2016 - decembrie 2016',
+                exp9_role: 'Barman', exp9_date: 'iunie 2015 - aprilie 2016',
+                skills_title: 'Competențe', skills_admin: 'Administrație și Management',
+                skill_client_mgmt: 'Managementul Clienților și Furnizorilor', skill_invoicing: 'Facturare',
+                skill_doc_mgmt: 'Managementul Documentelor', skill_admin_support: 'Asistență Administrativă',
+                skill_bank_rec: 'Reconcilieri Bancare', skill_accounting: 'Suport Contabil',
+                skills_software: 'Software și Instrumente',
+                skills_hospitality: 'Hotelărie și Turism',
+                skill_reception: 'Recepție', skill_checkin: 'Check-in / Check-out',
+                skill_reservations: 'Managementul Rezervărilor', skill_customer: 'Serviciul Clienți',
+                skill_commercial: 'Management Comercial',
+                skills_soft: 'Competențe Personale',
+                skill_organization: 'Organizare', skill_rigor: 'Rigoare',
+                skill_adaptability: 'Adaptabilitate', skill_teamwork: 'Lucru în Echipă',
+                skill_multilingual: 'Multilingvism', skill_proactive: 'Proactivitate',
+                cert_title: 'Certificări',
+                cert1_name: 'Curs de Formare Profesională în Finanțe pentru Non-Financiari',
+                edu_title: 'Educație',
+                edu1_school: 'EPRAL - Școala Profesională din Regiunea Alentejo',
+                edu1_course: 'Curs Tehnic de Turism și Hotelărie', edu1_date: 'septembrie 2014 - iulie 2017',
+                edu2_school: 'Escola C+S Cunha Rivara - Arraiolos',
+                edu2_course: 'Învățământ Secundar', edu2_date: 'septembrie 2002 - iulie 2014',
+                lang_title: 'Limbi',
+                lang_pt: '🇵🇹 Portugheză', lang_pt_level: 'Nativă / Bilingvă',
+                lang_ro: '🇷🇴 Română', lang_ro_level: 'Nativă / Bilingvă',
+                lang_en: '🇬🇧 Engleză', lang_en_level: 'Profesional',
+                lang_ru: '🇷🇺 Rusă', lang_ru_level: 'Profesional',
+                lang_es: '🇪🇸 Spaniolă', lang_es_level: 'Elementar',
+                lang_uk: '🇺🇦 Ucraineană', lang_uk_level: 'Elementar',
+                contact_title: 'Contact',
+                contact_text: 'Interesat să luați legătura?',
+                contact_download: 'Descarcă CV',
+                footer_rights: 'Toate drepturile rezervate.'
+            },
+            ru: {
+                nav_about: 'Обо мне', nav_experience: 'Опыт', nav_skills: 'Навыки',
+                nav_education: 'Образование', nav_languages: 'Языки', nav_contact: 'Контакт',
+                header_title: 'Административный и финансовый ассистент',
+                header_location: 'Вендаш-Новаш, Эвора, Португалия',
+                header_tagline: '"Организация, Точность и Преданность"',
+                about_title: 'Обо мне',
+                about_text: 'Специалист в области администрирования и финансов с более чем 8-летним опытом работы в различных отраслях, включая возобновляемую энергетику, сельское хозяйство, виноделие и гостиничный бизнес. Обладаю навыками управления клиентами и поставщиками, выставления счетов, финансового контроля и административной поддержки. Отличаюсь организационными способностями, пунктуальностью и лёгкостью адаптации к новым условиям и задачам. Свободно владею португальским, румынским, английским и русским языками, имею знания испанского и украинского.',
+                exp_title: 'Профессиональный опыт',
+                exp1_role: 'Администратор', exp1_date: 'март 2025 - настоящее время',
+                exp1_desc: 'Общее административное управление, операционная поддержка и контроль документов в компании интегрированных услуг.',
+                exp2_role: 'Финансовый административный ассистент', exp2_date: 'май 2023 - февраль 2025',
+                exp2_desc: 'Финансовое и административное управление, выставление счетов, контроль дебиторской и кредиторской задолженности, банковские сверки, управление поставщиками и бухгалтерская поддержка в компании возобновляемой энергетики.',
+                exp3_role: 'Технический административный ассистент', exp3_date: 'апрель 2022 - май 2023',
+                exp3_desc: 'Техническо-административная поддержка, управление документами фотоэлектрических проектов, координация с клиентами и поставщиками, поддержка инженерной команды.',
+                exp4_role: 'Административный и финансовый ассистент', exp4_date: 'октябрь 2021 - апрель 2022',
+                exp4_desc: 'Административное и финансовое управление в сельскохозяйственном секторе, включая выставление счетов, контроль поставщиков и бухгалтерскую поддержку.',
+                exp5_role: 'Административный ассистент', exp5_date: 'февраль 2019 - октябрь 2021',
+                exp5_desc: 'Административная поддержка в ведущей винодельческой компании, управление заказами, выставление счетов, работа с национальными и международными клиентами и организация документов.',
+                exp6_role: 'Ресепшионист и ассистент бэк-офиса', exp6_date: 'февраль 2017 - ноябрь 2018',
+                exp6_desc: 'Приём гостей, заселение/выселение, управление бронированиями, гостиничное выставление счетов и административная поддержка бэк-офиса.',
+                exp7a_role: 'Ресепшионист отеля', exp7a_date: 'август 2017 - ноябрь 2017',
+                exp7b_role: 'Коммерческий менеджер и отдел бронирования', exp7b_date: 'май 2017 - август 2017',
+                exp7_desc: 'Управление бронированиями, приём гостей, коммерческая поддержка и координация отдела бронирования в бутик-отеле в Эворе.',
+                exp8_role: 'Официант', exp8_date: 'май 2016 - декабрь 2016',
+                exp9_role: 'Бармен', exp9_date: 'июнь 2015 - апрель 2016',
+                skills_title: 'Навыки', skills_admin: 'Администрирование и управление',
+                skill_client_mgmt: 'Управление клиентами и поставщиками', skill_invoicing: 'Выставление счетов',
+                skill_doc_mgmt: 'Управление документами', skill_admin_support: 'Административная поддержка',
+                skill_bank_rec: 'Банковские сверки', skill_accounting: 'Бухгалтерская поддержка',
+                skills_software: 'Программное обеспечение',
+                skills_hospitality: 'Гостиничный бизнес и туризм',
+                skill_reception: 'Ресепшн', skill_checkin: 'Заселение / Выселение',
+                skill_reservations: 'Управление бронированиями', skill_customer: 'Обслуживание клиентов',
+                skill_commercial: 'Коммерческое управление',
+                skills_soft: 'Личные качества',
+                skill_organization: 'Организованность', skill_rigor: 'Точность',
+                skill_adaptability: 'Адаптивность', skill_teamwork: 'Работа в команде',
+                skill_multilingual: 'Многоязычие', skill_proactive: 'Проактивность',
+                cert_title: 'Сертификации',
+                cert1_name: 'Курс профессиональной подготовки по финансам для нефинансовых специалистов',
+                edu_title: 'Образование',
+                edu1_school: 'EPRAL - Профессиональная школа региона Алентежу',
+                edu1_course: 'Технический курс по туризму и гостиничному делу', edu1_date: 'сентябрь 2014 - июль 2017',
+                edu2_school: 'Escola C+S Cunha Rivara - Arraiolos',
+                edu2_course: 'Среднее образование', edu2_date: 'сентябрь 2002 - июль 2014',
+                lang_title: 'Языки',
+                lang_pt: '🇵🇹 Португальский', lang_pt_level: 'Родной / Двуязычный',
+                lang_ro: '🇷🇴 Румынский', lang_ro_level: 'Родной / Двуязычный',
+                lang_en: '🇬🇧 Английский', lang_en_level: 'Профессиональный',
+                lang_ru: '🇷🇺 Русский', lang_ru_level: 'Профессиональный',
+                lang_es: '🇪🇸 Испанский', lang_es_level: 'Начальный',
+                lang_uk: '🇺🇦 Украинский', lang_uk_level: 'Начальный',
+                contact_title: 'Контакт',
+                contact_text: 'Хотите связаться?',
+                contact_download: 'Скачать CV',
+                footer_rights: 'Все права защищены.'
+            }
+        };
+
+        const flags = { pt: '🇵🇹', en: '🇬🇧', ro: '🇷🇴', ru: '🇷🇺' };
+        let currentLang = localStorage.getItem('lang') || 'pt';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            document.documentElement.lang = lang;
+            document.getElementById('currentFlag').textContent = flags[lang];
+            document.getElementById('langMenu').classList.add('hidden');
+            const t = translations[lang];
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (t[key]) el.textContent = t[key];
+            });
+        }
+
+        // Dark Mode
+        function toggleDarkMode() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateDarkIcons(isDark);
+        }
+
+        function updateDarkIcons(isDark) {
+            const sun = document.getElementById('sunIcon');
+            const moon = document.getElementById('moonIcon');
+            if (sun && moon) {
+                sun.classList.toggle('hidden', !isDark);
+                moon.classList.toggle('hidden', isDark);
+            }
+        }
+
+        // Mobile Menu
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        // Language Menu Toggle
+        document.getElementById('langBtn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            document.getElementById('langMenu').classList.toggle('hidden');
+        });
+        document.addEventListener('click', () => {
+            document.getElementById('langMenu').classList.add('hidden');
+        });
+
+        // Init
+        (function() {
+            // Theme
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = saved === 'dark' || (!saved && prefersDark);
+            if (isDark) document.documentElement.classList.add('dark');
+            updateDarkIcons(isDark);
+
+            // Language
+            setLanguage(currentLang);
+
+            // Scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

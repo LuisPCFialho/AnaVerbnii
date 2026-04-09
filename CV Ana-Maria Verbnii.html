@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Ana-Maria Verbnii</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            color: #2d3748;
+            background: #fff;
+            font-size: 9.5pt;
+            line-height: 1.4;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 72mm;
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 24px 18px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar h2 {
+            color: #f472b6;
+            font-size: 9pt;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #4a5568;
+            font-weight: 600;
+        }
+
+        .photo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .photo-container img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 3px solid #f472b6;
+        }
+
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            font-size: 8.5pt;
+            color: #cbd5e0;
+        }
+
+        .contact-icon {
+            width: 14px;
+            min-width: 14px;
+            margin-right: 8px;
+            margin-top: 2px;
+            fill: #f472b6;
+        }
+
+        .contact-item a {
+            color: #cbd5e0;
+            text-decoration: none;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            font-size: 8.5pt;
+            margin-bottom: 5px;
+            padding-left: 12px;
+            position: relative;
+            color: #cbd5e0;
+        }
+
+        .skill-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #f472b6;
+        }
+
+        .lang-item {
+            margin-bottom: 8px;
+        }
+
+        .lang-name {
+            font-size: 8.5pt;
+            font-weight: 500;
+            color: #e2e8f0;
+            margin-bottom: 3px;
+        }
+
+        .lang-level {
+            font-size: 7.5pt;
+            color: #a0aec0;
+        }
+
+        .lang-bar-container {
+            height: 4px;
+            background: #4a5568;
+            border-radius: 2px;
+            margin-top: 3px;
+        }
+
+        .lang-bar-fill {
+            height: 100%;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #f472b6, #14b8a6);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 24px 22px;
+        }
+
+        .header {
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f472b6;
+            padding-bottom: 14px;
+        }
+
+        .header h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 4px;
+        }
+
+        .header .subtitle {
+            font-size: 11pt;
+            color: #718096;
+            font-weight: 400;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section h2 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #1a202c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .exp-item {
+            margin-bottom: 12px;
+            page-break-inside: avoid;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .exp-role {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .exp-date {
+            font-size: 8pt;
+            color: #a0aec0;
+            white-space: nowrap;
+        }
+
+        .exp-company {
+            font-size: 9pt;
+            color: #f472b6;
+            font-weight: 500;
+            margin-bottom: 1px;
+        }
+
+        .exp-location {
+            font-size: 8pt;
+            color: #a0aec0;
+            margin-bottom: 3px;
+        }
+
+        .exp-desc {
+            font-size: 8.5pt;
+            color: #4a5568;
+            line-height: 1.45;
+        }
+
+        .edu-item {
+            margin-bottom: 10px;
+        }
+
+        .edu-school {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .edu-course {
+            font-size: 8.5pt;
+            color: #f472b6;
+            font-weight: 500;
+        }
+
+        .edu-date {
+            font-size: 8pt;
+            color: #a0aec0;
+        }
+
+        .cert-item {
+            font-size: 8.5pt;
+            color: #4a5568;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .cert-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #14b8a6;
+            font-weight: 700;
+        }
+
+        @media print {
+            body { background: #fff; }
+            .page { box-shadow: none; width: 100%; }
+        }
+
+        @media screen {
+            .page { box-shadow: 0 0 20px rgba(0,0,0,0.15); margin: 20px auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="photo-container">
+                <img src="Foto curriculo.png" alt="Ana-Maria Verbnii">
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Contacto</h2>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" fill="none" stroke="#f472b6" stroke-width="2"/></svg>
+                    <a href="mailto:verbnii_24@hotmail.com">verbnii_24@hotmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" fill="none" stroke="#f472b6" stroke-width="2"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" fill="none" stroke="#f472b6" stroke-width="2"/></svg>
+                    <span>Vendas Novas, Évora, Portugal</span>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" fill="none" stroke="#f472b6" stroke-width="2"/></svg>
+                    <a href="https://www.linkedin.com/in/anaverbnii">linkedin.com/in/anaverbnii</a>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9" fill="none" stroke="#f472b6" stroke-width="2"/></svg>
+                    <a href="https://anaverbnii.me">anaverbnii.me</a>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Competências</h2>
+                <ul class="skill-list">
+                    <li>Gestão de Clientes e Fornecedores</li>
+                    <li>Faturação e Controlo Financeiro</li>
+                    <li>Gestão Documental</li>
+                    <li>Reconciliações Bancárias</li>
+                    <li>Apoio Contabilístico</li>
+                    <li>Microsoft Office (Excel, Word)</li>
+                    <li>Gestão de Reservas</li>
+                    <li>Atendimento ao Cliente</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Idiomas</h2>
+                <div class="lang-item">
+                    <div class="lang-name">Português</div>
+                    <div class="lang-level">Nativo / Bilingue</div>
+                    <div class="lang-bar-container"><div class="lang-bar-fill" style="width:100%"></div></div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-name">Romeno</div>
+                    <div class="lang-level">Nativo / Bilingue</div>
+                    <div class="lang-bar-container"><div class="lang-bar-fill" style="width:100%"></div></div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-name">Inglês</div>
+                    <div class="lang-level">Profissional</div>
+                    <div class="lang-bar-container"><div class="lang-bar-fill" style="width:80%"></div></div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-name">Russo</div>
+                    <div class="lang-level">Profissional</div>
+                    <div class="lang-bar-container"><div class="lang-bar-fill" style="width:80%"></div></div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-name">Espanhol</div>
+                    <div class="lang-level">Elementar</div>
+                    <div class="lang-bar-container"><div class="lang-bar-fill" style="width:40%"></div></div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-name">Ucraniano</div>
+                    <div class="lang-level">Elementar</div>
+                    <div class="lang-bar-container"><div class="lang-bar-fill" style="width:30%"></div></div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Certificações</h2>
+                <div class="cert-item">
+                    Finanças para Não Financeiros (Formação Profissional)
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <h1>Ana-Maria Verbnii</h1>
+                <div class="subtitle">Assistente Administrativa e Financeira</div>
+            </div>
+
+            <!-- Profile -->
+            <div class="section">
+                <h2>Perfil</h2>
+                <p class="exp-desc">
+                    Profissional administrativa e financeira com mais de 8 anos de experiência em diversos setores, incluindo energias renováveis, agricultura, produção vinícola e hotelaria. Competências sólidas em gestão de clientes e fornecedores, faturação, controlo financeiro e apoio administrativo. Capacidade de organização, rigor no cumprimento de prazos e facilidade de adaptação a novos ambientes. Fluente em Português, Romeno, Inglês e Russo.
+                </p>
+            </div>
+
+            <!-- Experience -->
+            <div class="section">
+                <h2>Experiência Profissional</h2>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Administrativo</span>
+                        <span class="exp-date">mar 2025 - Presente</span>
+                    </div>
+                    <div class="exp-company">Iberglobal powered by MCA</div>
+                    <div class="exp-location">Vendas Novas, Évora</div>
+                    <div class="exp-desc">Gestão administrativa geral, apoio à operação e controlo documental.</div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Assistente Administrativo Financeiro</span>
+                        <span class="exp-date">mai 2023 - fev 2025</span>
+                    </div>
+                    <div class="exp-company">PowerYield</div>
+                    <div class="exp-location">Montemor-o-Novo, Évora</div>
+                    <div class="exp-desc">Faturação, contas a pagar/receber, reconciliações bancárias, gestão de fornecedores e apoio contabilístico no setor de energias renováveis.</div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Assistente Técnico Administrativa</span>
+                        <span class="exp-date">abr 2022 - mai 2023</span>
+                    </div>
+                    <div class="exp-company">PowerYield</div>
+                    <div class="exp-location">Montemor-o-Novo, Évora</div>
+                    <div class="exp-desc">Gestão documental de projetos fotovoltaicos, coordenação com clientes e fornecedores, e suporte à equipa de engenharia.</div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Assistente Administrativa e Financeira</span>
+                        <span class="exp-date">out 2021 - abr 2022</span>
+                    </div>
+                    <div class="exp-company">Agrovisul</div>
+                    <div class="exp-location">Évora</div>
+                    <div class="exp-desc">Gestão administrativa e financeira no setor agrícola, faturação e controlo de fornecedores.</div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Assistente Administrativa</span>
+                        <span class="exp-date">fev 2019 - out 2021</span>
+                    </div>
+                    <div class="exp-company">Casa Relvas</div>
+                    <div class="exp-location">São Miguel de Machede, Évora</div>
+                    <div class="exp-desc">Gestão de encomendas, faturação, contacto com clientes nacionais e internacionais numa empresa vinícola de referência.</div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Rececionista e Assistente de Back Office</span>
+                        <span class="exp-date">fev 2017 - nov 2018</span>
+                    </div>
+                    <div class="exp-company">Évora Hotel</div>
+                    <div class="exp-location">Évora</div>
+                    <div class="exp-desc">Check-in/check-out, gestão de reservas, faturação hoteleira e apoio administrativo.</div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Recepcionista / Gerente Comercial e Reservas</span>
+                        <span class="exp-date">mai 2017 - nov 2017</span>
+                    </div>
+                    <div class="exp-company">M'AR De AR Hotels</div>
+                    <div class="exp-location">Évora</div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="section">
+                <h2>Formação Académica</h2>
+
+                <div class="edu-item">
+                    <div class="edu-school">EPRAL - Escola Profissional da Região Alentejo</div>
+                    <div class="edu-course">Curso Técnico de Turismo e Hotelaria</div>
+                    <div class="edu-date">setembro 2014 - julho 2017</div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-school">Escola C+S Cunha Rivara - Arraiolos</div>
+                    <div class="edu-course">Ensino Secundário</div>
+                    <div class="edu-date">setembro 2002 - julho 2014</div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
