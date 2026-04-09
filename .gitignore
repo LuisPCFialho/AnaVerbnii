@@ -2,3 +2,5 @@ generate_cv.py
 __pycache__/
 *.pyc
 CV Linkedin Ana-Maria Verbnii.pdf
+
+.vercel
