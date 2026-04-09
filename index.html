@@ -17,8 +17,8 @@
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        primary: { 50: '#f0f4ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#4f63d2', 600: '#3b4fb8', 700: '#2e3f8f', 800: '#1e2a6e', 900: '#1a2255' },
-                        accent: { 50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc', 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' }
+                        primary: { 50: '#f8f6f3', 100: '#f0ebe4', 200: '#e0d5c7', 300: '#c9b89e', 400: '#b09a74', 500: '#96794a', 600: '#7d6340', 700: '#644e34', 800: '#4a3a28', 900: '#352a1e' },
+                        accent: { 50: '#f6f7f9', 100: '#eceef2', 200: '#d5d9e2', 300: '#b0b8c9', 400: '#8692ab', 500: '#64708d', 600: '#4e5873', 700: '#3f475d', 800: '#2e3447', 900: '#1e2231' }
                     }
                 }
             }
@@ -27,7 +27,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4ff;
+            background-color: #f8f6f3;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         html.dark body {
@@ -65,16 +65,16 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(to bottom, #4f63d2, #0ea5e9);
+            background: linear-gradient(to bottom, #96794a, #64708d);
         }
         html.dark .timeline-line {
-            background: linear-gradient(to bottom, #3b4fb8, #0284c7);
+            background: linear-gradient(to bottom, #7d6340, #4e5873);
         }
         .timeline-dot {
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #4f63d2, #0ea5e9);
+            background: linear-gradient(135deg, #96794a, #64708d);
             position: absolute;
             left: calc(1.25rem - 5px);
             top: 0.5rem;
@@ -103,7 +103,7 @@
         .lang-fill {
             height: 100%;
             border-radius: 4px;
-            background: linear-gradient(90deg, #4f63d2, #0ea5e9);
+            background: linear-gradient(90deg, #96794a, #64708d);
             transition: width 1s ease;
         }
         .profile-img {
@@ -112,12 +112,12 @@
             object-fit: cover;
             object-position: center top;
             border-radius: 50%;
-            border: 4px solid #4f63d2;
-            box-shadow: 0 0 30px rgba(79, 99, 210, 0.3);
+            border: 4px solid #96794a;
+            box-shadow: 0 0 30px rgba(150, 121, 74, 0.3);
         }
         html.dark .profile-img {
-            border-color: #3b4fb8;
-            box-shadow: 0 0 30px rgba(59, 79, 184, 0.3);
+            border-color: #7d6340;
+            box-shadow: 0 0 30px rgba(125, 99, 64, 0.3);
         }
         .hamburger-line {
             transition: all 0.3s ease;
@@ -197,7 +197,7 @@
 
         <!-- Header Section -->
         <section class="fade-in-section text-center py-12">
-            <div class="mx-auto mb-6 rounded-full overflow-hidden" style="width:220px;height:220px;border:4px solid #4f63d2;box-shadow:0 0 30px rgba(79,99,210,0.3)">
+            <div class="mx-auto mb-6 rounded-full overflow-hidden" style="width:220px;height:220px;border:4px solid #96794a;box-shadow:0 0 30px rgba(79,99,210,0.3)">
                 <img src="Foto curriculo.png" alt="Ana-Maria Verbnii" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;transform:scale(1.35)">
             </div>
             <h1 class="text-4xl sm:text-5xl font-bold mb-3 bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent">
@@ -239,7 +239,7 @@
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                             <div>
                                 <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp1_role">Administrativo</h3>
-                                <p class="text-primary-500 font-semibold">Iberglobal powered by MCA</p>
+                                <a href="https://www.iberglobal.pt" target="_blank" rel="noopener noreferrer" class="text-primary-500 font-semibold hover:underline">Iberglobal powered by MCA</a>
                             </div>
                             <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp1_date">março 2025 - Presente</span>
                         </div>
@@ -259,7 +259,7 @@
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                             <div>
                                 <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp2_role">Assistente Administrativo Financeiro</h3>
-                                <p class="text-primary-500 font-semibold">PowerYield</p>
+                                <a href="https://www.poweryield.com" target="_blank" rel="noopener noreferrer" class="text-primary-500 font-semibold hover:underline">PowerYield</a>
                             </div>
                             <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp2_date">maio 2023 - fevereiro 2025</span>
                         </div>
@@ -281,7 +281,7 @@
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                             <div>
                                 <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp3_role">Assistente Técnico Administrativa</h3>
-                                <p class="text-primary-500 font-semibold">PowerYield</p>
+                                <a href="https://www.poweryield.com" target="_blank" rel="noopener noreferrer" class="text-primary-500 font-semibold hover:underline">PowerYield</a>
                             </div>
                             <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp3_date">abril 2022 - maio 2023</span>
                         </div>
@@ -303,7 +303,7 @@
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                             <div>
                                 <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp4_role">Assistente Administrativa e Financeira</h3>
-                                <p class="text-primary-500 font-semibold">Agrovisul</p>
+                                <a href="https://www.agrovisul.pt" target="_blank" rel="noopener noreferrer" class="text-primary-500 font-semibold hover:underline">Agrovisul</a>
                             </div>
                             <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp4_date">outubro 2021 - abril 2022</span>
                         </div>
@@ -324,7 +324,7 @@
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                             <div>
                                 <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp5_role">Assistente Administrativa</h3>
-                                <p class="text-primary-500 font-semibold">Casa Relvas</p>
+                                <a href="https://www.casarelvas.pt" target="_blank" rel="noopener noreferrer" class="text-primary-500 font-semibold hover:underline">Casa Relvas</a>
                             </div>
                             <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp5_date">fevereiro 2019 - outubro 2021</span>
                         </div>
@@ -346,7 +346,7 @@
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                             <div>
                                 <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp6_role">Rececionista de Front Office e Assistente de Back Office</h3>
-                                <p class="text-primary-500 font-semibold">Évora Hotel</p>
+                                <a href="https://www.evorahotel.pt" target="_blank" rel="noopener noreferrer" class="text-primary-500 font-semibold hover:underline">Évora Hotel</a>
                             </div>
                             <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp6_date">fevereiro 2017 - novembro 2018</span>
                         </div>
@@ -368,7 +368,7 @@
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                             <div>
                                 <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp7a_role">Recepcionista de Hotel</h3>
-                                <p class="text-primary-500 font-semibold">M'AR De AR Hotels</p>
+                                <a href="https://www.mfrgroup.com" target="_blank" rel="noopener noreferrer" class="text-primary-500 font-semibold hover:underline">M'AR De AR Hotels</a>
                             </div>
                             <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp7a_date">agosto 2017 - novembro 2017</span>
                         </div>
@@ -393,7 +393,7 @@
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                             <div>
                                 <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp8_role">Garçom</h3>
-                                <p class="text-primary-500 font-semibold">O Pelourinho</p>
+                                <p class="text-primary-500 font-semibold">O Pelourinho</p><!-- no website -->
                             </div>
                             <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp8_date">maio 2016 - dezembro 2016</span>
                         </div>
@@ -408,7 +408,7 @@
                         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                             <div>
                                 <h3 class="text-lg font-bold text-gray-900 dark:text-white" data-translate="exp9_role">Técnico de Bar</h3>
-                                <p class="text-primary-500 font-semibold">O Gingão</p>
+                                <p class="text-primary-500 font-semibold">O Gingão</p><!-- no website -->
                             </div>
                             <span class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-0 whitespace-nowrap" data-translate="exp9_date">junho 2015 - abril 2016</span>
                         </div>
