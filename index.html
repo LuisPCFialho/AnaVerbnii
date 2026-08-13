@@ -8,6 +8,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,300&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="foto.jpg" fetchpriority="high">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ana-Maria Verbnii",
+  "jobTitle": "Assistente Administrativa e Financeira",
+  "email": "mailto:verbnii_24@hotmail.com",
+  "url": "https://anaverbnii.me",
+  "image": "https://anaverbnii.me/foto.jpg",
+  "sameAs": ["https://www.linkedin.com/in/anaverbnii"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Vendas Novas",
+    "addressRegion": "Évora",
+    "addressCountry": "PT"
+  },
+  "knowsLanguage": ["pt", "ro", "ru", "en", "es"]
+}
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -140,10 +160,10 @@ footer{padding:34px 0 56px;color:#5f5c56;font-size:12.5px;text-align:center}
       <a href="#formacao" data-t="nav_edu">Formação</a>
       <a href="#contacto" data-t="nav_contact">Contacto</a>
       <div class="langs">
-        <button class="on" data-lang="pt">PT</button>
-        <button data-lang="en">EN</button>
-        <button data-lang="ro">RO</button>
-        <button data-lang="ru">RU</button>
+        <button class="on" data-lang="pt" aria-label="Português" aria-pressed="true">PT</button>
+        <button data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+        <button data-lang="ro" aria-label="Română" aria-pressed="false">RO</button>
+        <button data-lang="ru" aria-label="Русский" aria-pressed="false">RU</button>
       </div>
     </div>
   </div>
@@ -156,7 +176,7 @@ footer{padding:34px 0 56px;color:#5f5c56;font-size:12.5px;text-align:center}
       <div class="role" data-t="role">Administração financeira · Recursos humanos · Apoio à gestão</div>
       <p class="lede" data-t="lede">Nove anos a manter os processos de uma empresa a correr todos os dias: faturação, tesouraria, fornecedores, salários e documentação, em energias renováveis, agricultura, vitivinicultura e hotelaria.</p>
     </div>
-    <img class="photo" src="Foto curriculo.png" alt="Ana-Maria Verbnii">
+    <img class="photo" src="foto.jpg" width="640" height="802" fetchpriority="high" decoding="async" alt="Ana-Maria Verbnii">
   </div>
   <div class="contactbar">
     <a href="mailto:verbnii_24@hotmail.com">verbnii_24@hotmail.com</a>
@@ -269,10 +289,10 @@ footer{padding:34px 0 56px;color:#5f5c56;font-size:12.5px;text-align:center}
         <div class="col">
           <h3 data-t="sk_sw">Software</h3>
           <ul>
-            <li><span>Cegid Primavera</span><span class="stars">★★★★★</span></li>
-            <li><span>SAP Business One</span><span class="stars">★★★★<span class="dim">★</span></span></li>
-            <li><span>Microsoft Excel</span><span class="stars">★★★★<span class="dim">★</span></span></li>
-            <li><span>TOC Online</span><span class="stars">★★★<span class="dim">★★</span></span></li>
+            <li><span>Cegid Primavera</span><span class="stars" role="img" aria-label="5/5">★★★★★</span></li>
+            <li><span>SAP Business One</span><span class="stars" role="img" aria-label="4/5">★★★★<span class="dim">★</span></span></li>
+            <li><span>Microsoft Excel</span><span class="stars" role="img" aria-label="4/5">★★★★<span class="dim">★</span></span></li>
+            <li><span>TOC Online</span><span class="stars" role="img" aria-label="3/5">★★★<span class="dim">★★</span></span></li>
             <li data-t="sk_s5"><span>New Hotel · WiseCrop · Office</span></li>
           </ul>
         </div>
@@ -435,12 +455,20 @@ function applyLang(dict, lang, btn){
     if (v) el.innerHTML = v;
   });
   document.documentElement.lang = lang;
-  document.querySelectorAll('.langs button').forEach(b => b.classList.toggle('on', b === btn));
+  document.querySelectorAll('.langs button').forEach(b => {
+    b.classList.toggle('on', b === btn);
+    b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+  });
+}
+
+function saveLang(lang){
+  try { localStorage.setItem('lang', lang); } catch(e) {}
 }
 
 document.querySelectorAll('.langs button').forEach(btn => {
   btn.addEventListener('click', () => {
     const dict = T[btn.dataset.lang];
+    saveLang(btn.dataset.lang);
     if (!motionOK) { applyLang(dict, btn.dataset.lang, btn); return; }
     const fade = [document.querySelector('header'), document.querySelector('main')];
     fade.forEach(el => { el.style.transition = 'opacity .18s ease'; el.style.opacity = '0'; });
@@ -450,6 +478,20 @@ document.querySelectorAll('.langs button').forEach(btn => {
     }, 180);
   });
 });
+
+/* initial language: ?lang= param > saved choice > browser language > pt */
+(function(){
+  const valid = ['pt','en','ro','ru'];
+  let stored = null;
+  try { stored = localStorage.getItem('lang'); } catch(e) {}
+  const param = new URLSearchParams(location.search).get('lang');
+  const browser = (navigator.language || 'pt').slice(0,2).toLowerCase();
+  const lang = [param, stored, browser].find(l => valid.includes(l)) || 'pt';
+  if (lang !== 'pt') {
+    const btn = document.querySelector('.langs button[data-lang="' + lang + '"]');
+    if (btn) applyLang(T[lang], lang, btn);
+  }
+})();
 
 /* scroll reveals */
 if (motionOK) {
@@ -480,5 +522,6 @@ const spy = new IntersectionObserver(entries => {
 }, { rootMargin: '-35% 0px -60% 0px' });
 document.querySelectorAll('main section').forEach(s => spy.observe(s));
 </script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
