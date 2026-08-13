@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Ana-Maria Verbnii — administração financeira, recursos humanos e apoio à gestão. Nove anos em energias renováveis, agricultura, vitivinicultura e hotelaria.">
-<title>Ana-Maria Verbnii — Currículo</title>
+<meta name="description" content="Ana-Maria Verbnii - administração financeira, recursos humanos e apoio à gestão. Nove anos em energias renováveis, agricultura, vitivinicultura e hotelaria.">
+<title>Ana-Maria Verbnii - Currículo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,300&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -16,6 +16,7 @@
   --muted:#9b978e;
   --gold:#c9a76a;
   --rule:#26262a;
+  --ease:cubic-bezier(.16,1,.3,1);
 }
 body{
   background:var(--bg);
@@ -26,16 +27,19 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+a:focus-visible,button:focus-visible{outline:1px solid var(--gold);outline-offset:3px}
 
 /* nav */
-nav{border-bottom:1px solid var(--rule)}
+nav{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--rule);background:rgba(11,11,12,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .navrow{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0}
 .brand{font-family:'Newsreader',Georgia,serif;font-size:17px;font-weight:400;letter-spacing:.2px}
 .navlinks{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
-.navlinks a{color:var(--muted);text-decoration:none;font-size:14px}
-.navlinks a:hover{color:var(--ink)}
+.navlinks a{color:var(--muted);text-decoration:none;font-size:14px;position:relative;transition:color .3s}
+.navlinks a::after{content:'';position:absolute;left:0;bottom:-5px;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.navlinks a:hover,.navlinks a.active{color:var(--ink)}
+.navlinks a:hover::after,.navlinks a.active::after{transform:scaleX(1);transform-origin:left}
 .langs{display:flex;gap:10px;margin-left:8px}
-.langs button{background:none;border:0;color:#5f5c56;font-size:12.5px;letter-spacing:.4px;cursor:pointer;padding:0;font-family:inherit}
+.langs button{background:none;border:0;color:#5f5c56;font-size:12.5px;letter-spacing:.4px;cursor:pointer;padding:0;font-family:inherit;transition:color .3s}
 .langs button:hover{color:var(--muted)}
 .langs button.on{color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:2px}
 
@@ -45,16 +49,20 @@ header{padding-top:72px}
 h1{font-family:'Newsreader',Georgia,serif;font-weight:300;font-size:clamp(44px,6vw,68px);line-height:1.02;letter-spacing:-.5px;margin-bottom:18px}
 .role{color:var(--gold);font-size:15px;margin-bottom:22px}
 .lede{font-family:'Newsreader',Georgia,serif;font-size:19px;line-height:1.62;color:#d6d4ce;max-width:34em}
-.photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;filter:grayscale(.15)}
+.photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;filter:grayscale(.15);transition:filter .6s ease}
+.photo:hover{filter:grayscale(0)}
 .contactbar{display:flex;flex-wrap:wrap;gap:28px;align-items:center;margin-top:44px;padding:16px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.contactbar a{color:var(--gold);text-decoration:none;font-size:13.5px}
-.contactbar a:hover{text-decoration:underline}
+.contactbar a{color:var(--gold);text-decoration:none;font-size:13.5px;position:relative}
+.contactbar a::after{content:'';position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.contactbar a:hover::after{transform:scaleX(1);transform-origin:left}
 .place{margin-left:auto;color:var(--muted);font-size:13.5px}
 
 /* sections */
-section{padding:64px 0;border-bottom:1px solid var(--rule)}
+section{padding:64px 0;border-bottom:1px solid var(--rule);scroll-margin-top:72px}
 .grid{display:grid;grid-template-columns:150px 1fr;gap:32px;align-items:start}
 .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);padding-top:5px}
+.label::after{content:'';display:block;width:34px;height:1px;background:var(--gold);margin-top:10px;transform:scaleX(0);transform-origin:left;transition:transform .9s var(--ease) .2s}
+.label.in::after{transform:scaleX(1)}
 .body p{margin-bottom:16px;max-width:66em}
 .body p:last-child{margin-bottom:0}
 
@@ -88,9 +96,30 @@ section{padding:64px 0;border-bottom:1px solid var(--rule)}
 
 /* contact */
 .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
-.cta a{border:1px solid var(--rule);color:var(--ink);text-decoration:none;padding:11px 22px;font-size:14px;transition:.15s}
-.cta a:hover{border-color:var(--gold);color:var(--gold)}
+.cta a{position:relative;z-index:0;overflow:hidden;border:1px solid var(--rule);color:var(--ink);text-decoration:none;padding:11px 22px;font-size:14px;transition:color .35s var(--ease),border-color .35s var(--ease),transform .15s}
+.cta a::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--gold);transform:translateY(101%);transition:transform .35s var(--ease)}
+.cta a:hover{color:#0b0b0c;border-color:var(--gold)}
+.cta a:hover::before{transform:translateY(0)}
+.cta a:active{transform:translateY(1px)}
 footer{padding:34px 0 56px;color:#5f5c56;font-size:12.5px;text-align:center}
+
+/* motion: page load + scroll reveals (motion-safe only) */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:no-preference){
+  html{scroll-behavior:smooth}
+  .hero h1{animation:rise .9s var(--ease) both}
+  .hero .role{animation:rise .9s var(--ease) .12s both}
+  .hero .lede{animation:rise .9s var(--ease) .22s both}
+  .photo{animation:photoin 1.1s var(--ease) .28s both}
+  .contactbar{animation:rise .9s var(--ease) .45s both}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .label::after{transform:scaleX(1);transition:none}
+}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes photoin{from{opacity:0;transform:translateY(18px) scale(1.03)}to{opacity:1;transform:none}}
 
 @media(max-width:860px){
   .hero{grid-template-columns:1fr;gap:32px}
@@ -127,7 +156,7 @@ footer{padding:34px 0 56px;color:#5f5c56;font-size:12.5px;text-align:center}
     <div>
       <h1>Ana-Maria Verbnii</h1>
       <div class="role" data-t="role">Administração financeira · Recursos humanos · Apoio à gestão</div>
-      <p class="lede" data-t="lede">Nove anos a manter os processos de uma empresa a correr todos os dias — faturação, tesouraria, fornecedores, salários e documentação — em energias renováveis, agricultura, vitivinicultura e hotelaria.</p>
+      <p class="lede" data-t="lede">Nove anos a manter os processos de uma empresa a correr todos os dias: faturação, tesouraria, fornecedores, salários e documentação, em energias renováveis, agricultura, vitivinicultura e hotelaria.</p>
     </div>
     <img class="photo" src="Foto curriculo.png" alt="Ana-Maria Verbnii">
   </div>
@@ -145,7 +174,7 @@ footer{padding:34px 0 56px;color:#5f5c56;font-size:12.5px;text-align:center}
   <div class="grid">
     <div class="label" data-t="lbl_about">Sobre</div>
     <div class="body">
-      <p data-t="about1">Gosto de ambientes organizados, de resolver problemas e de criar processos que ajudam as equipas a trabalhar melhor. Passei pelo ciclo financeiro completo — de mais de 100 fornecedores e reconciliações bancárias diárias à preparação da documentação para a contabilidade — e pelo ciclo de recursos humanos, do processamento salarial aos contratos e à formação.</p>
+      <p data-t="about1">Gosto de ambientes organizados, de resolver problemas e de criar processos que ajudam as equipas a trabalhar melhor. Passei pelo ciclo financeiro completo, de mais de 100 fornecedores e reconciliações bancárias diárias à preparação da documentação para a contabilidade, e pelo ciclo de recursos humanos, do processamento salarial aos contratos e à formação.</p>
       <p data-t="about2">Aprendo ferramentas novas depressa e trabalho em quatro idiomas. Procuro uma organização onde possa assumir mais responsabilidade e continuar a crescer.</p>
     </div>
   </div>
@@ -159,7 +188,7 @@ footer{padding:34px 0 56px;color:#5f5c56;font-size:12.5px;text-align:center}
       <div class="job">
         <div class="jobhead">
           <div class="jobtitle" data-t="j1t">Administrativo</div>
-          <div class="jobdate" data-t="j1d">março 2025 — presente</div>
+          <div class="jobdate" data-t="j1d">março 2025 - presente</div>
         </div>
         <div class="jobmeta"><span class="co">Iberglobal powered by MCA</span> <span class="loc">· Vendas Novas</span></div>
         <div class="jobdesc" data-t="j1x">Gestão administrativa geral, apoio à operação e à gestão e controlo documental numa empresa de serviços integrados.</div>
@@ -168,7 +197,7 @@ footer{padding:34px 0 56px;color:#5f5c56;font-size:12.5px;text-align:center}
       <div class="job">
         <div class="jobhead">
           <div class="jobtitle" data-t="j2t">Assistente Administrativa Financeira</div>
-          <div class="jobdate" data-t="j2d">maio 2023 — fevereiro 2025</div>
+          <div class="jobdate" data-t="j2d">maio 2023 - fevereiro 2025</div>
         </div>
         <div class="jobmeta"><span class="co">PowerYield</span> <span class="loc">· Montemor-o-Novo</span></div>
         <div class="jobdesc" data-t="j2x">Ciclo financeiro completo: mais de 100 fornecedores, faturação e reconciliações bancárias diárias, pagamentos, contas a pagar e a receber, preparação da documentação para a contabilidade e apoio à gestão. Em recursos humanos: processamento salarial, admissões, contratos, controlo de férias, medicina do trabalho e formação.</div>
@@ -177,7 +206,7 @@ footer{padding:34px 0 56px;color:#5f5c56;font-size:12.5px;text-align:center}
       <div class="job">
         <div class="jobhead">
           <div class="jobtitle" data-t="j3t">Assistente Técnica Administrativa</div>
-          <div class="jobdate" data-t="j3d">abril 2022 — maio 2023</div>
+          <div class="jobdate" data-t="j3d">abril 2022 - maio 2023</div>
         </div>
         <div class="jobmeta"><span class="co">PowerYield</span> <span class="loc">· Montemor-o-Novo</span></div>
         <div class="jobdesc" data-t="j3x">Apoio técnico-administrativo, gestão documental de projetos fotovoltaicos, coordenação com clientes e fornecedores e suporte à equipa de engenharia.</div>
@@ -186,7 +215,7 @@ footer{padding:34px 0 56px;color:#5f5c56;font-size:12.5px;text-align:center}
       <div class="job">
         <div class="jobhead">
           <div class="jobtitle" data-t="j4t">Assistente Administrativa e Financeira</div>
-          <div class="jobdate" data-t="j4d">outubro 2021 — abril 2022</div>
+          <div class="jobdate" data-t="j4d">outubro 2021 - abril 2022</div>
         </div>
         <div class="jobmeta"><span class="co">Agrovisul</span> <span class="loc">· Évora</span></div>
         <div class="jobdesc" data-t="j4x">Gestão administrativa e financeira no setor agrícola: faturação, controlo de fornecedores e apoio contabilístico.</div>
@@ -195,7 +224,7 @@ footer{padding:34px 0 56px;color:#5f5c56;font-size:12.5px;text-align:center}
       <div class="job">
         <div class="jobhead">
           <div class="jobtitle" data-t="j5t">Assistente Administrativa</div>
-          <div class="jobdate" data-t="j5d">fevereiro 2019 — outubro 2021</div>
+          <div class="jobdate" data-t="j5d">fevereiro 2019 - outubro 2021</div>
         </div>
         <div class="jobmeta"><span class="co">Casa Relvas</span> <span class="loc">· São Miguel de Machede</span></div>
         <div class="jobdesc" data-t="j5x">Apoio administrativo numa empresa vitivinícola de referência: gestão de encomendas, faturação, contacto com clientes nacionais e internacionais e organização documental.</div>
@@ -204,7 +233,7 @@ footer{padding:34px 0 56px;color:#5f5c56;font-size:12.5px;text-align:center}
       <div class="job">
         <div class="jobhead">
           <div class="jobtitle" data-t="j6t">Receção e Back Office</div>
-          <div class="jobdate" data-t="j6d">2016 — 2018</div>
+          <div class="jobdate" data-t="j6d">2016 - 2018</div>
         </div>
         <div class="jobmeta"><span class="co">Évora Hotel · M'AR De AR Hotels</span> <span class="loc">· Évora</span></div>
         <div class="jobdesc" data-t="j6x">Atendimento, check-in e check-out, gestão de reservas, faturação hoteleira e apoio administrativo de back office.</div>
@@ -275,11 +304,11 @@ footer{padding:34px 0 56px;color:#5f5c56;font-size:12.5px;text-align:center}
       </div>
       <div class="edu">
         <div class="edutitle" data-t="e2t">Curso Técnico de Turismo e Hotelaria</div>
-        <div class="edumeta" data-t="e2m">EPRAL — Escola Profissional da Região Alentejo · 2014–2017</div>
+        <div class="edumeta" data-t="e2m">EPRAL - Escola Profissional da Região Alentejo · 2014-2017</div>
       </div>
       <div class="edu">
         <div class="edutitle" data-t="e3t">Ensino Secundário</div>
-        <div class="edumeta" data-t="e3m">Escola C+S Cunha Rivara, Arraiolos · 2002–2014</div>
+        <div class="edumeta" data-t="e3m">Escola C+S Cunha Rivara, Arraiolos · 2002-2014</div>
       </div>
     </div>
   </div>
@@ -323,23 +352,23 @@ const T = {
   en:{
     nav_exp:'Experience',nav_skills:'Skills',nav_edu:'Education',nav_contact:'Contact',
     role:'Financial administration · Human resources · Management support',
-    lede:'Nine years keeping a company’s processes running every day — invoicing, treasury, suppliers, payroll and documentation — across renewable energy, agriculture, winemaking and hospitality.',
+    lede:'Nine years keeping a company’s processes running every day: invoicing, treasury, suppliers, payroll and documentation, across renewable energy, agriculture, winemaking and hospitality.',
     lbl_about:'About',lbl_exp:'Experience',lbl_skills:'Skills',lbl_edu:'Education',lbl_lang:'Languages',lbl_contact:'Contact',
-    about1:'I like organised environments, solving problems and building processes that help teams work better. I have run the full finance cycle — from 100+ suppliers and daily bank reconciliations to preparing documentation for accounting — and the full HR cycle, from payroll to contracts and training.',
+    about1:'I like organised environments, solving problems and building processes that help teams work better. I have run the full finance cycle, from 100+ suppliers and daily bank reconciliations to preparing documentation for accounting, and the full HR cycle, from payroll to contracts and training.',
     about2:'I learn new tools quickly and work in four languages. I am looking for an organisation where I can take on more responsibility and keep growing.',
-    j1t:'Administrative Officer',j1d:'March 2025 — present',j1x:'General administration, operational and management support, and document control at an integrated services company.',
-    j2t:'Financial Administrative Assistant',j2d:'May 2023 — February 2025',j2x:'Full finance cycle: 100+ suppliers, daily invoicing and bank reconciliations, payments, accounts payable and receivable, preparing documentation for accounting and management support. In HR: payroll, hiring, contracts, leave tracking, occupational health and training.',
-    j3t:'Technical Administrative Assistant',j3d:'April 2022 — May 2023',j3x:'Technical and administrative support, document management for photovoltaic projects, coordination with clients and suppliers, and support to the engineering team.',
-    j4t:'Administrative and Financial Assistant',j4d:'October 2021 — April 2022',j4x:'Administrative and financial management in the agricultural sector: invoicing, supplier control and accounting support.',
-    j5t:'Administrative Assistant',j5d:'February 2019 — October 2021',j5x:'Administrative support at a leading winery: order management, invoicing, contact with national and international clients and document organisation.',
-    j6t:'Front Desk and Back Office',j6d:'2016 — 2018',j6x:'Guest service, check-in and check-out, reservations, hotel invoicing and back-office administrative support.',
+    j1t:'Administrative Officer',j1d:'March 2025 - present',j1x:'General administration, operational and management support, and document control at an integrated services company.',
+    j2t:'Financial Administrative Assistant',j2d:'May 2023 - February 2025',j2x:'Full finance cycle: 100+ suppliers, daily invoicing and bank reconciliations, payments, accounts payable and receivable, preparing documentation for accounting and management support. In HR: payroll, hiring, contracts, leave tracking, occupational health and training.',
+    j3t:'Technical Administrative Assistant',j3d:'April 2022 - May 2023',j3x:'Technical and administrative support, document management for photovoltaic projects, coordination with clients and suppliers, and support to the engineering team.',
+    j4t:'Administrative and Financial Assistant',j4d:'October 2021 - April 2022',j4x:'Administrative and financial management in the agricultural sector: invoicing, supplier control and accounting support.',
+    j5t:'Administrative Assistant',j5d:'February 2019 - October 2021',j5x:'Administrative support at a leading winery: order management, invoicing, contact with national and international clients and document organisation.',
+    j6t:'Front Desk and Back Office',j6d:'2016 - 2018',j6x:'Guest service, check-in and check-out, reservations, hotel invoicing and back-office administrative support.',
     sk_admin:'Administration & finance',sk_a1:'Client and supplier management',sk_a2:'Invoicing',sk_a3:'Bank reconciliations',sk_a4:'Accounts payable & receivable',sk_a5:'Accounting support',sk_a6:'Document management',
     sk_hr:'Human resources',sk_h1:'Payroll',sk_h2:'Hiring and contracts',sk_h3:'Leave tracking',sk_h4:'Occupational health',sk_h5:'Training management',
     sk_sw:'Software',sk_s5:'New Hotel · WiseCrop · Office',
     sk_soft:'Personal',sk_p1:'Organisation and rigour',sk_p2:'Adaptability',sk_p3:'Teamwork',sk_p4:'Proactivity',sk_p5:'Multilingual',
     lbl_edu:'Education',e1t:'Finance for Non-Financial Managers',e1m:'Professional training',
-    e2t:'Technical Course in Tourism and Hospitality',e2m:'EPRAL — Alentejo Regional Vocational School · 2014–2017',
-    e3t:'Secondary Education',e3m:'Escola C+S Cunha Rivara, Arraiolos · 2002–2014',
+    e2t:'Technical Course in Tourism and Hospitality',e2m:'EPRAL - Alentejo Regional Vocational School · 2014-2017',
+    e3t:'Secondary Education',e3m:'Escola C+S Cunha Rivara, Arraiolos · 2002-2014',
     l1:'Portuguese',l2:'Romanian',l3:'Russian',l4:'English',l5:'Spanish',
     lv_native:'Native',lv_native2:'Native',lv_native3:'Native',lv_prof:'Professional',lv_basic:'Basic',
     c1:'Looking for someone organised, rigorous and versatile? I would be glad to talk.',
@@ -348,23 +377,23 @@ const T = {
   ro:{
     nav_exp:'Experiență',nav_skills:'Competențe',nav_edu:'Studii',nav_contact:'Contact',
     role:'Administrație financiară · Resurse umane · Sprijin managerial',
-    lede:'Nouă ani în care am ținut procesele unei companii să funcționeze zilnic — facturare, trezorerie, furnizori, salarii și documentație — în energie regenerabilă, agricultură, viticultură și ospitalitate.',
+    lede:'Nouă ani în care am ținut procesele unei companii să funcționeze zilnic: facturare, trezorerie, furnizori, salarii și documentație, în energie regenerabilă, agricultură, viticultură și ospitalitate.',
     lbl_about:'Despre',lbl_exp:'Experiență',lbl_skills:'Competențe',lbl_edu:'Studii',lbl_lang:'Limbi',lbl_contact:'Contact',
-    about1:'Îmi plac mediile organizate, rezolvarea problemelor și crearea de procese care ajută echipele să lucreze mai bine. Am parcurs ciclul financiar complet — de la peste 100 de furnizori și reconcilieri bancare zilnice până la pregătirea documentației pentru contabilitate — și ciclul complet de resurse umane, de la salarizare la contracte și formare.',
+    about1:'Îmi plac mediile organizate, rezolvarea problemelor și crearea de procese care ajută echipele să lucreze mai bine. Am parcurs ciclul financiar complet, de la peste 100 de furnizori și reconcilieri bancare zilnice până la pregătirea documentației pentru contabilitate, și ciclul complet de resurse umane, de la salarizare la contracte și formare.',
     about2:'Învăț repede instrumente noi și lucrez în patru limbi. Caut o organizație în care să îmi asum mai multă responsabilitate și să continui să cresc.',
-    j1t:'Administrator',j1d:'martie 2025 — prezent',j1x:'Administrație generală, sprijin operațional și managerial și control documentar într-o companie de servicii integrate.',
-    j2t:'Asistent Administrativ Financiar',j2d:'mai 2023 — februarie 2025',j2x:'Ciclu financiar complet: peste 100 de furnizori, facturare și reconcilieri bancare zilnice, plăți, conturi de plătit și de încasat, pregătirea documentației pentru contabilitate și sprijin managerial. În HR: salarizare, angajări, contracte, evidența concediilor, medicina muncii și formare.',
-    j3t:'Asistent Tehnic Administrativ',j3d:'aprilie 2022 — mai 2023',j3x:'Sprijin tehnic și administrativ, gestiune documentară pentru proiecte fotovoltaice, coordonare cu clienți și furnizori și sprijin pentru echipa de inginerie.',
-    j4t:'Asistent Administrativ și Financiar',j4d:'octombrie 2021 — aprilie 2022',j4x:'Administrație și finanțe în sectorul agricol: facturare, control furnizori și sprijin contabil.',
-    j5t:'Asistent Administrativ',j5d:'februarie 2019 — octombrie 2021',j5x:'Sprijin administrativ într-o cramă de referință: gestionarea comenzilor, facturare, contact cu clienți naționali și internaționali și organizare documentară.',
-    j6t:'Recepție și Back Office',j6d:'2016 — 2018',j6x:'Relații cu clienții, check-in și check-out, rezervări, facturare hotelieră și sprijin administrativ de back office.',
+    j1t:'Administrator',j1d:'martie 2025 - prezent',j1x:'Administrație generală, sprijin operațional și managerial și control documentar într-o companie de servicii integrate.',
+    j2t:'Asistent Administrativ Financiar',j2d:'mai 2023 - februarie 2025',j2x:'Ciclu financiar complet: peste 100 de furnizori, facturare și reconcilieri bancare zilnice, plăți, conturi de plătit și de încasat, pregătirea documentației pentru contabilitate și sprijin managerial. În HR: salarizare, angajări, contracte, evidența concediilor, medicina muncii și formare.',
+    j3t:'Asistent Tehnic Administrativ',j3d:'aprilie 2022 - mai 2023',j3x:'Sprijin tehnic și administrativ, gestiune documentară pentru proiecte fotovoltaice, coordonare cu clienți și furnizori și sprijin pentru echipa de inginerie.',
+    j4t:'Asistent Administrativ și Financiar',j4d:'octombrie 2021 - aprilie 2022',j4x:'Administrație și finanțe în sectorul agricol: facturare, control furnizori și sprijin contabil.',
+    j5t:'Asistent Administrativ',j5d:'februarie 2019 - octombrie 2021',j5x:'Sprijin administrativ într-o cramă de referință: gestionarea comenzilor, facturare, contact cu clienți naționali și internaționali și organizare documentară.',
+    j6t:'Recepție și Back Office',j6d:'2016 - 2018',j6x:'Relații cu clienții, check-in și check-out, rezervări, facturare hotelieră și sprijin administrativ de back office.',
     sk_admin:'Administrație și finanțe',sk_a1:'Gestionarea clienților și furnizorilor',sk_a2:'Facturare',sk_a3:'Reconcilieri bancare',sk_a4:'Conturi de plătit și de încasat',sk_a5:'Sprijin contabil',sk_a6:'Gestiune documentară',
     sk_hr:'Resurse umane',sk_h1:'Salarizare',sk_h2:'Angajări și contracte',sk_h3:'Evidența concediilor',sk_h4:'Medicina muncii',sk_h5:'Gestionarea formării',
     sk_sw:'Software',sk_s5:'New Hotel · WiseCrop · Office',
     sk_soft:'Personale',sk_p1:'Organizare și rigoare',sk_p2:'Adaptabilitate',sk_p3:'Lucru în echipă',sk_p4:'Proactivitate',sk_p5:'Multilingvism',
     e1t:'Finanțe pentru Non-Financiari',e1m:'Formare profesională',
-    e2t:'Curs Tehnic de Turism și Ospitalitate',e2m:'EPRAL — Școala Profesională a Regiunii Alentejo · 2014–2017',
-    e3t:'Învățământ Secundar',e3m:'Escola C+S Cunha Rivara, Arraiolos · 2002–2014',
+    e2t:'Curs Tehnic de Turism și Ospitalitate',e2m:'EPRAL - Școala Profesională a Regiunii Alentejo · 2014-2017',
+    e3t:'Învățământ Secundar',e3m:'Escola C+S Cunha Rivara, Arraiolos · 2002-2014',
     l1:'Portugheză',l2:'Română',l3:'Rusă',l4:'Engleză',l5:'Spaniolă',
     lv_native:'Nativ',lv_native2:'Nativ',lv_native3:'Nativ',lv_prof:'Profesional',lv_basic:'Elementar',
     c1:'Căutați o persoană organizată, riguroasă și versatilă? Aș fi bucuroasă să discutăm.',
@@ -373,23 +402,23 @@ const T = {
   ru:{
     nav_exp:'Опыт',nav_skills:'Навыки',nav_edu:'Образование',nav_contact:'Контакты',
     role:'Финансовое администрирование · Кадры · Поддержка руководства',
-    lede:'Девять лет обеспечиваю ежедневную работу процессов компании — выставление счетов, казначейство, поставщики, зарплата и документооборот — в возобновляемой энергетике, сельском хозяйстве, виноделии и гостиничном бизнесе.',
+    lede:'Девять лет обеспечиваю ежедневную работу процессов компании: выставление счетов, казначейство, поставщики, зарплата и документооборот, в возобновляемой энергетике, сельском хозяйстве, виноделии и гостиничном бизнесе.',
     lbl_about:'О себе',lbl_exp:'Опыт',lbl_skills:'Навыки',lbl_edu:'Образование',lbl_lang:'Языки',lbl_contact:'Контакты',
-    about1:'Люблю порядок, решение задач и построение процессов, которые помогают командам работать лучше. Прошла полный финансовый цикл — от более чем 100 поставщиков и ежедневных банковских сверок до подготовки документации для бухгалтерии — и полный кадровый цикл, от расчёта зарплаты до договоров и обучения.',
+    about1:'Люблю порядок, решение задач и построение процессов, которые помогают командам работать лучше. Прошла полный финансовый цикл, от более чем 100 поставщиков и ежедневных банковских сверок до подготовки документации для бухгалтерии, и полный кадровый цикл, от расчёта зарплаты до договоров и обучения.',
     about2:'Быстро осваиваю новые инструменты и работаю на четырёх языках. Ищу организацию, где смогу взять больше ответственности и продолжить расти.',
-    j1t:'Администратор',j1d:'март 2025 — настоящее время',j1x:'Общее администрирование, операционная и управленческая поддержка, контроль документооборота в компании комплексных услуг.',
-    j2t:'Финансовый администратор',j2d:'май 2023 — февраль 2025',j2x:'Полный финансовый цикл: более 100 поставщиков, ежедневное выставление счетов и банковские сверки, платежи, кредиторская и дебиторская задолженность, подготовка документации для бухгалтерии и поддержка руководства. В кадрах: расчёт зарплаты, приём на работу, договоры, учёт отпусков, охрана труда и обучение.',
-    j3t:'Технический администратор',j3d:'апрель 2022 — май 2023',j3x:'Техническая и административная поддержка, документооборот фотоэлектрических проектов, координация с клиентами и поставщиками, поддержка инженерной команды.',
-    j4t:'Административно-финансовый ассистент',j4d:'октябрь 2021 — апрель 2022',j4x:'Администрирование и финансы в сельском хозяйстве: выставление счетов, контроль поставщиков и бухгалтерская поддержка.',
-    j5t:'Административный ассистент',j5d:'февраль 2019 — октябрь 2021',j5x:'Административная поддержка ведущей винодельни: управление заказами, выставление счетов, контакты с национальными и международными клиентами, организация документов.',
-    j6t:'Ресепшн и бэк-офис',j6d:'2016 — 2018',j6x:'Обслуживание гостей, заселение и выезд, бронирование, гостиничные счета и административная поддержка бэк-офиса.',
+    j1t:'Администратор',j1d:'март 2025 - настоящее время',j1x:'Общее администрирование, операционная и управленческая поддержка, контроль документооборота в компании комплексных услуг.',
+    j2t:'Финансовый администратор',j2d:'май 2023 - февраль 2025',j2x:'Полный финансовый цикл: более 100 поставщиков, ежедневное выставление счетов и банковские сверки, платежи, кредиторская и дебиторская задолженность, подготовка документации для бухгалтерии и поддержка руководства. В кадрах: расчёт зарплаты, приём на работу, договоры, учёт отпусков, охрана труда и обучение.',
+    j3t:'Технический администратор',j3d:'апрель 2022 - май 2023',j3x:'Техническая и административная поддержка, документооборот фотоэлектрических проектов, координация с клиентами и поставщиками, поддержка инженерной команды.',
+    j4t:'Административно-финансовый ассистент',j4d:'октябрь 2021 - апрель 2022',j4x:'Администрирование и финансы в сельском хозяйстве: выставление счетов, контроль поставщиков и бухгалтерская поддержка.',
+    j5t:'Административный ассистент',j5d:'февраль 2019 - октябрь 2021',j5x:'Административная поддержка ведущей винодельни: управление заказами, выставление счетов, контакты с национальными и международными клиентами, организация документов.',
+    j6t:'Ресепшн и бэк-офис',j6d:'2016 - 2018',j6x:'Обслуживание гостей, заселение и выезд, бронирование, гостиничные счета и административная поддержка бэк-офиса.',
     sk_admin:'Администрирование и финансы',sk_a1:'Работа с клиентами и поставщиками',sk_a2:'Выставление счетов',sk_a3:'Банковские сверки',sk_a4:'Кредиторская и дебиторская задолженность',sk_a5:'Бухгалтерская поддержка',sk_a6:'Документооборот',
     sk_hr:'Кадры',sk_h1:'Расчёт заработной платы',sk_h2:'Приём на работу и договоры',sk_h3:'Учёт отпусков',sk_h4:'Охрана труда',sk_h5:'Организация обучения',
     sk_sw:'Программы',sk_s5:'New Hotel · WiseCrop · Office',
     sk_soft:'Личные качества',sk_p1:'Организованность и точность',sk_p2:'Адаптивность',sk_p3:'Работа в команде',sk_p4:'Инициативность',sk_p5:'Многоязычие',
     e1t:'Финансы для нефинансистов',e1m:'Профессиональное обучение',
-    e2t:'Техникум туризма и гостиничного дела',e2m:'EPRAL — Профессиональная школа региона Алентежу · 2014–2017',
-    e3t:'Среднее образование',e3m:'Escola C+S Cunha Rivara, Аррайолуш · 2002–2014',
+    e2t:'Техникум туризма и гостиничного дела',e2m:'EPRAL - Профессиональная школа региона Алентежу · 2014-2017',
+    e3t:'Среднее образование',e3m:'Escola C+S Cunha Rivara, Аррайолуш · 2002-2014',
     l1:'Португальский',l2:'Румынский',l3:'Русский',l4:'Английский',l5:'Испанский',
     lv_native:'Родной',lv_native2:'Родной',lv_native3:'Родной',lv_prof:'Профессиональный',lv_basic:'Базовый',
     c1:'Ищете организованного, внимательного и разностороннего специалиста? Буду рада пообщаться.',
@@ -401,17 +430,58 @@ const PT = {};
 document.querySelectorAll('[data-t]').forEach(el => { PT[el.dataset.t] = el.innerHTML; });
 T.pt = PT;
 
+const motionOK = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function applyLang(dict, lang, btn){
+  document.querySelectorAll('[data-t]').forEach(el => {
+    const v = dict[el.dataset.t];
+    if (v) el.innerHTML = v;
+  });
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.langs button').forEach(b => b.classList.toggle('on', b === btn));
+}
+
 document.querySelectorAll('.langs button').forEach(btn => {
   btn.addEventListener('click', () => {
     const dict = T[btn.dataset.lang];
-    document.querySelectorAll('[data-t]').forEach(el => {
-      const v = dict[el.dataset.t];
-      if (v) el.innerHTML = v;
-    });
-    document.documentElement.lang = btn.dataset.lang;
-    document.querySelectorAll('.langs button').forEach(b => b.classList.toggle('on', b === btn));
+    if (!motionOK) { applyLang(dict, btn.dataset.lang, btn); return; }
+    const fade = [document.querySelector('header'), document.querySelector('main')];
+    fade.forEach(el => { el.style.transition = 'opacity .18s ease'; el.style.opacity = '0'; });
+    setTimeout(() => {
+      applyLang(dict, btn.dataset.lang, btn);
+      fade.forEach(el => { el.style.opacity = '1'; });
+    }, 180);
   });
 });
+
+/* scroll reveals */
+if (motionOK) {
+  const items = document.querySelectorAll('.label, .body > p, .job, .col, .edu, .langlist > div, .cta a');
+  const io = new IntersectionObserver(entries => {
+    const vis = entries.filter(e => e.isIntersecting);
+    vis.forEach((e, i) => {
+      e.target.style.transitionDelay = (i * 70) + 'ms';
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+  items.forEach(el => { el.classList.add('rv'); io.observe(el); });
+}
+
+/* scrollspy */
+const spyLinks = new Map();
+document.querySelectorAll('.navlinks a[href^="#"]').forEach(a => spyLinks.set(a.getAttribute('href').slice(1), a));
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    const link = spyLinks.get(e.target.id);
+    if (!link) return;
+    if (e.isIntersecting) {
+      spyLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-35% 0px -60% 0px' });
+document.querySelectorAll('main section').forEach(s => spy.observe(s));
 </script>
 </body>
 </html>
