@@ -14,6 +14,11 @@
             margin: 0;
         }
 
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
         body {
             font-family: 'Inter', 'Segoe UI', sans-serif;
             color: #2d3748;
@@ -24,31 +29,27 @@
             print-color-adjust: exact;
         }
 
-        html, body {
-            margin: 0 !important;
-            padding: 0 !important;
-            height: 100%;
-            width: 100%;
+        .page {
+            width: 210mm;
+            height: 296mm;
+            display: flex;
+            overflow: hidden;
+            background: #fff;
+            position: relative;
         }
 
-        .page {
-            width: 100%;
-            min-height: 297mm;
-            margin: 0 !important;
-            padding: 0 !important;
-            display: flex;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+        .page + .page {
+            page-break-before: always;
+            break-before: page;
         }
 
         /* Sidebar */
         .sidebar {
             width: 72mm;
+            min-width: 72mm;
             background: #1a202c;
             color: #e2e8f0;
-            padding: 24px 18px;
+            padding: 22px 18px;
             display: flex;
             flex-direction: column;
         }
@@ -57,8 +58,8 @@
             color: #96794a;
             font-size: 9pt;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
+            letter-spacing: 1.2px;
+            margin-bottom: 10px;
             padding-bottom: 6px;
             border-bottom: 1px solid #4a5568;
             font-weight: 600;
@@ -70,8 +71,8 @@
         }
 
         .photo-container img {
-            width: 90px;
-            height: 90px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center top;
@@ -79,23 +80,23 @@
         }
 
         .sidebar-section {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .contact-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 8px;
+            margin-bottom: 7px;
             font-size: 8.5pt;
             color: #cbd5e0;
+            word-break: break-word;
         }
 
         .contact-icon {
-            width: 14px;
-            min-width: 14px;
+            width: 13px;
+            min-width: 13px;
             margin-right: 8px;
             margin-top: 2px;
-            fill: #96794a;
         }
 
         .contact-item a {
@@ -120,6 +121,33 @@
             position: absolute;
             left: 0;
             color: #96794a;
+        }
+
+        .soft-item {
+            margin-bottom: 8px;
+        }
+
+        .soft-name {
+            font-size: 8.5pt;
+            font-weight: 500;
+            color: #e2e8f0;
+        }
+
+        .stars {
+            font-size: 9pt;
+            letter-spacing: 1px;
+            color: #96794a;
+        }
+
+        .stars .empty {
+            color: #4a5568;
+        }
+
+        .soft-other {
+            font-size: 7.5pt;
+            color: #a0aec0;
+            margin-top: 6px;
+            line-height: 1.5;
         }
 
         .lang-item {
@@ -151,16 +179,32 @@
             background: linear-gradient(90deg, #96794a, #64708d);
         }
 
+        .cert-item {
+            font-size: 8.5pt;
+            color: #cbd5e0;
+            padding-left: 14px;
+            position: relative;
+            line-height: 1.45;
+        }
+
+        .cert-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #96794a;
+            font-weight: 700;
+        }
+
         /* Main Content */
         .main-content {
             flex: 1;
-            padding: 24px 22px;
+            padding: 22px 20px;
         }
 
         .header {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             border-bottom: 2px solid #96794a;
-            padding-bottom: 14px;
+            padding-bottom: 12px;
         }
 
         .header h1 {
@@ -168,31 +212,70 @@
             font-weight: 700;
             color: #1a202c;
             margin-bottom: 4px;
+            letter-spacing: -0.4px;
         }
 
         .header .subtitle {
-            font-size: 11pt;
+            font-size: 9pt;
             color: #718096;
-            font-weight: 400;
+            font-weight: 500;
+            margin-bottom: 5px;
+            white-space: nowrap;
+        }
+
+        .header .tagline {
+            font-size: 9pt;
+            color: #96794a;
+            font-style: italic;
         }
 
         .section {
-            margin-bottom: 18px;
+            margin-bottom: 15px;
         }
 
         .section h2 {
-            font-size: 11pt;
+            font-size: 10.5pt;
             font-weight: 700;
             color: #1a202c;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             padding-bottom: 4px;
             border-bottom: 1px solid #e2e8f0;
         }
 
+        .profile-text p {
+            font-size: 8.5pt;
+            color: #4a5568;
+            line-height: 1.5;
+            text-align: justify;
+            margin-bottom: 5px;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px 14px;
+        }
+
+        .value-item {
+            font-size: 8.5pt;
+            color: #2d3748;
+            font-weight: 500;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .value-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #96794a;
+            font-weight: 700;
+        }
+
         .exp-item {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             page-break-inside: avoid;
         }
 
@@ -200,7 +283,7 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 2px;
+            gap: 10px;
         }
 
         .exp-role {
@@ -216,27 +299,39 @@
         }
 
         .exp-company {
-            font-size: 9pt;
+            font-size: 8.5pt;
             color: #96794a;
-            font-weight: 500;
-            margin-bottom: 1px;
-        }
-
-        .exp-location {
-            font-size: 8pt;
-            color: #a0aec0;
+            font-weight: 600;
             margin-bottom: 3px;
         }
 
-        .exp-desc {
+        .exp-company .loc {
+            color: #a0aec0;
+            font-weight: 400;
+            font-size: 8pt;
+        }
+
+        .exp-list {
+            list-style: none;
+        }
+
+        .exp-list li {
             font-size: 8.5pt;
             color: #4a5568;
             line-height: 1.45;
-            text-align: justify;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .exp-list li::before {
+            content: '▪';
+            position: absolute;
+            left: 0;
+            color: #96794a;
         }
 
         .edu-item {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .edu-school {
@@ -256,34 +351,34 @@
             color: #a0aec0;
         }
 
-        .cert-item {
+        .cta {
+            margin-top: 20px;
+            border-top: 2px solid #96794a;
+            padding-top: 10px;
+        }
+
+        .cta-question {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 3px;
+        }
+
+        .cta-answer {
             font-size: 8.5pt;
             color: #4a5568;
-            padding-left: 12px;
-            position: relative;
-        }
-
-        .cert-item::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #64708d;
-            font-weight: 700;
-        }
-
-        @media print {
-            body { background: #fff; }
-            .page { box-shadow: none; width: 100%; }
         }
 
         @media screen {
-            .page { box-shadow: 0 0 20px rgba(0,0,0,0.15); margin: 20px auto; }
+            body { background: #e9e6e1; padding: 20px 0; }
+            .page { box-shadow: 0 0 20px rgba(0,0,0,0.15); margin: 0 auto 20px; }
         }
     </style>
 </head>
 <body>
+
+    <!-- ============ PAGE 1 ============ -->
     <div class="page">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="photo-container">
                 <img src="Foto curriculo.png" alt="Ana-Maria Verbnii">
@@ -310,45 +405,171 @@
             </div>
 
             <div class="sidebar-section">
-                <h2>Competências</h2>
+                <h2>Administração e Finanças</h2>
                 <ul class="skill-list">
                     <li>Gestão de Clientes e Fornecedores</li>
-                    <li>Faturação e Controlo Financeiro</li>
-                    <li>Gestão Documental</li>
+                    <li>Faturação</li>
+                    <li>Contas a Pagar e a Receber</li>
                     <li>Reconciliações Bancárias</li>
+                    <li>Controlo Financeiro</li>
                     <li>Apoio Contabilístico</li>
-                    <li>Cegid Primavera</li>
-                    <li>SAP Business One</li>
-                    <li>TOC Online</li>
-                    <li>Microsoft Office (Excel, Word)</li>
-                    <li>New Hotel</li>
-                    <li>WiseCrop</li>
-                    <li>Gestão de Reservas</li>
-                    <li>Atendimento ao Cliente</li>
+                    <li>Gestão Documental</li>
                 </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Recursos Humanos</h2>
+                <ul class="skill-list">
+                    <li>Processamento Salarial</li>
+                    <li>Admissões</li>
+                    <li>Contratos de Trabalho</li>
+                    <li>Controlo de Férias</li>
+                    <li>Medicina do Trabalho</li>
+                    <li>Formação</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Competências Pessoais</h2>
+                <ul class="skill-list">
+                    <li>Organização</li>
+                    <li>Rigor</li>
+                    <li>Adaptabilidade</li>
+                    <li>Trabalho em Equipa</li>
+                    <li>Proatividade</li>
+                    <li>Multilinguismo</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="header">
+                <h1>Ana-Maria Verbnii</h1>
+                <div class="subtitle">Administrativa Financeira &nbsp;|&nbsp; Recursos Humanos &nbsp;|&nbsp; Contabilidade &nbsp;|&nbsp; Apoio à Gestão</div>
+                <div class="tagline">Porque uma boa organização faz toda a diferença.</div>
+            </div>
+
+            <div class="section">
+                <h2>Perfil</h2>
+                <div class="profile-text">
+                    <p>Ao longo dos últimos nove anos desenvolvi experiência em administração, finanças, recursos humanos e apoio à gestão em empresas dos setores das energias renováveis, agricultura, vitivinicultura e hotelaria.</p>
+                    <p>Gosto de ambientes organizados, de resolver problemas e de criar processos que ajudam as equipas a trabalhar melhor.</p>
+                    <p>Destaco-me pela capacidade de adaptação, facilidade em aprender novas ferramentas e pelo compromisso com a qualidade do trabalho realizado.</p>
+                    <p>Atualmente procuro integrar uma organização onde possa continuar a crescer profissionalmente, assumir novas responsabilidades e contribuir para o sucesso da equipa.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>O que posso trazer à sua empresa</h2>
+                <div class="value-grid">
+                    <div class="value-item">Experiência em Administração</div>
+                    <div class="value-item">Experiência Financeira</div>
+                    <div class="value-item">Apoio à Contabilidade</div>
+                    <div class="value-item">Recursos Humanos</div>
+                    <div class="value-item">Gestão documental</div>
+                    <div class="value-item">Gestão de fornecedores</div>
+                    <div class="value-item">ERP Cegid Primavera</div>
+                    <div class="value-item">SAP Business One</div>
+                    <div class="value-item">Fluência em 4 idiomas</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Experiência Profissional</h2>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Administrativo</span>
+                        <span class="exp-date">mar 2025 - Presente</span>
+                    </div>
+                    <div class="exp-company">Iberglobal powered by MCA <span class="loc">· Vendas Novas, Évora</span></div>
+                    <ul class="exp-list">
+                        <li>Gestão administrativa geral</li>
+                        <li>Apoio à operação e à gestão</li>
+                        <li>Controlo e organização documental</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Assistente Administrativo Financeiro</span>
+                        <span class="exp-date">mai 2023 - fev 2025</span>
+                    </div>
+                    <div class="exp-company">PowerYield <span class="loc">· Montemor-o-Novo, Évora</span></div>
+                    <ul class="exp-list">
+                        <li>Gestão de mais de 100 fornecedores</li>
+                        <li>Faturação diária</li>
+                        <li>Reconciliações bancárias diárias</li>
+                        <li>Pagamentos e controlo de contas a pagar e a receber</li>
+                        <li>Preparação de documentação contabilística</li>
+                        <li>Controlo financeiro e apoio à gestão</li>
+                        <li>Processamento salarial, admissões e contratos de trabalho</li>
+                        <li>Controlo de férias, medicina do trabalho e formação</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Assistente Técnico Administrativa</span>
+                        <span class="exp-date">abr 2022 - mai 2023</span>
+                    </div>
+                    <div class="exp-company">PowerYield <span class="loc">· Montemor-o-Novo, Évora</span></div>
+                    <ul class="exp-list">
+                        <li>Gestão documental de projetos fotovoltaicos</li>
+                        <li>Coordenação com clientes e fornecedores</li>
+                        <li>Suporte administrativo à equipa de engenharia</li>
+                        <li>Apoio ao departamento de recursos humanos</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ============ PAGE 2 ============ -->
+    <div class="page">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2>Software</h2>
+                <div class="soft-item">
+                    <div class="soft-name">Cegid Primavera</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="soft-item">
+                    <div class="soft-name">SAP Business One</div>
+                    <div class="stars">★★★★<span class="empty">★</span></div>
+                </div>
+                <div class="soft-item">
+                    <div class="soft-name">Microsoft Excel</div>
+                    <div class="stars">★★★★<span class="empty">★</span></div>
+                </div>
+                <div class="soft-item">
+                    <div class="soft-name">TOC Online</div>
+                    <div class="stars">★★★<span class="empty">★★</span></div>
+                </div>
+                <div class="soft-other">Também: New Hotel, WiseCrop, Word, Outlook, Teams</div>
             </div>
 
             <div class="sidebar-section">
                 <h2>Idiomas</h2>
                 <div class="lang-item">
                     <div class="lang-name">Português</div>
-                    <div class="lang-level">Nativo / Bilingue</div>
+                    <div class="lang-level">Nativo</div>
                     <div class="lang-bar-container"><div class="lang-bar-fill" style="width:100%"></div></div>
                 </div>
                 <div class="lang-item">
                     <div class="lang-name">Romeno</div>
-                    <div class="lang-level">Nativo / Bilingue</div>
+                    <div class="lang-level">Nativo</div>
+                    <div class="lang-bar-container"><div class="lang-bar-fill" style="width:100%"></div></div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-name">Russo</div>
+                    <div class="lang-level">Nativo</div>
                     <div class="lang-bar-container"><div class="lang-bar-fill" style="width:100%"></div></div>
                 </div>
                 <div class="lang-item">
                     <div class="lang-name">Inglês</div>
                     <div class="lang-level">Profissional</div>
                     <div class="lang-bar-container"><div class="lang-bar-fill" style="width:80%"></div></div>
-                </div>
-                <div class="lang-item">
-                    <div class="lang-name">Russo</div>
-                    <div class="lang-level">Nativo</div>
-                    <div class="lang-bar-container"><div class="lang-bar-fill" style="width:100%"></div></div>
                 </div>
                 <div class="lang-item">
                     <div class="lang-name">Espanhol</div>
@@ -365,63 +586,21 @@
             </div>
         </aside>
 
-        <!-- Main Content -->
         <main class="main-content">
-            <div class="header">
-                <h1>Ana-Maria Verbnii</h1>
-                <div class="subtitle">Assistente Administrativa e Financeira</div>
-            </div>
-
-            <!-- Profile -->
             <div class="section">
-                <h2>Perfil</h2>
-                <p class="exp-desc">
-                    Profissional administrativa e financeira com mais de 9 anos de experiência em diversos setores, incluindo energias renováveis, agricultura, produção vinícola e vitivinícola e hotelaria. Competências sólidas em gestão de clientes e fornecedores, faturação, controlo financeiro e apoio administrativo. Capacidade de organização, rigor no cumprimento de prazos e facilidade de adaptação a novos ambientes. Fluente em Português, Romeno, Inglês e Russo.
-                </p>
-            </div>
-
-            <!-- Experience -->
-            <div class="section">
-                <h2>Experiência Profissional</h2>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-role">Administrativo</span>
-                        <span class="exp-date">mar 2025 - Presente</span>
-                    </div>
-                    <div class="exp-company">Iberglobal powered by MCA</div>
-                    <div class="exp-location">Vendas Novas, Évora</div>
-                    <div class="exp-desc">Gestão administrativa geral, apoio à operação e controlo documental.</div>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-role">Assistente Administrativo Financeiro</span>
-                        <span class="exp-date">mai 2023 - fev 2025</span>
-                    </div>
-                    <div class="exp-company">PowerYield</div>
-                    <div class="exp-location">Montemor-o-Novo, Évora</div>
-                    <div class="exp-desc">Faturação, contas a pagar/receber, reconciliações bancárias, gestão de fornecedores e apoio contabilístico no setor de energias renováveis.</div>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-role">Assistente Técnico Administrativa</span>
-                        <span class="exp-date">abr 2022 - mai 2023</span>
-                    </div>
-                    <div class="exp-company">PowerYield</div>
-                    <div class="exp-location">Montemor-o-Novo, Évora</div>
-                    <div class="exp-desc">Gestão documental de projetos fotovoltaicos, coordenação com clientes e fornecedores, suporte à equipa de engenharia e apoio RH.</div>
-                </div>
+                <h2>Experiência Profissional (cont.)</h2>
 
                 <div class="exp-item">
                     <div class="exp-header">
                         <span class="exp-role">Assistente Administrativa e Financeira</span>
                         <span class="exp-date">out 2021 - abr 2022</span>
                     </div>
-                    <div class="exp-company">Agrovisul</div>
-                    <div class="exp-location">Évora</div>
-                    <div class="exp-desc">Gestão administrativa e financeira no setor agrícola, faturação e controlo de fornecedores.</div>
+                    <div class="exp-company">Agrovisul <span class="loc">· Évora</span></div>
+                    <ul class="exp-list">
+                        <li>Gestão administrativa e financeira no setor agrícola</li>
+                        <li>Faturação e controlo de fornecedores</li>
+                        <li>Apoio contabilístico</li>
+                    </ul>
                 </div>
 
                 <div class="exp-item">
@@ -429,32 +608,40 @@
                         <span class="exp-role">Assistente Administrativa</span>
                         <span class="exp-date">fev 2019 - out 2021</span>
                     </div>
-                    <div class="exp-company">Casa Relvas</div>
-                    <div class="exp-location">São Miguel de Machede, Évora</div>
-                    <div class="exp-desc">Gestão de encomendas, faturação, contacto com clientes nacionais e internacionais numa empresa vinícola de referência.</div>
+                    <div class="exp-company">Casa Relvas <span class="loc">· São Miguel de Machede, Évora</span></div>
+                    <ul class="exp-list">
+                        <li>Gestão de encomendas e faturação</li>
+                        <li>Contacto com clientes nacionais e internacionais</li>
+                        <li>Organização documental numa empresa vitivinícola de referência</li>
+                    </ul>
                 </div>
 
                 <div class="exp-item">
                     <div class="exp-header">
-                        <span class="exp-role">Rececionista e Assistente de Back Office</span>
+                        <span class="exp-role">Rececionista de Front Office e Assistente de Back Office</span>
                         <span class="exp-date">fev 2017 - nov 2018</span>
                     </div>
-                    <div class="exp-company">Évora Hotel</div>
-                    <div class="exp-location">Évora</div>
-                    <div class="exp-desc">Check-in/check-out, gestão de reservas, faturação hoteleira e apoio administrativo.</div>
+                    <div class="exp-company">Évora Hotel <span class="loc">· Évora</span></div>
+                    <ul class="exp-list">
+                        <li>Atendimento ao público, check-in e check-out</li>
+                        <li>Gestão de reservas e faturação hoteleira</li>
+                        <li>Apoio administrativo de back office</li>
+                    </ul>
                 </div>
 
                 <div class="exp-item">
                     <div class="exp-header">
-                        <span class="exp-role">Recepcionista / Gerente Comercial e Reservas</span>
+                        <span class="exp-role">Rececionista · Gerente Comercial e Reservas</span>
                         <span class="exp-date">mai 2017 - nov 2017</span>
                     </div>
-                    <div class="exp-company">M'AR De AR Hotels</div>
-                    <div class="exp-location">Évora</div>
+                    <div class="exp-company">M'AR De AR Hotels <span class="loc">· Évora</span></div>
+                    <ul class="exp-list">
+                        <li>Gestão de reservas e receção de hóspedes</li>
+                        <li>Apoio comercial e coordenação do departamento de reservas</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Education -->
             <div class="section">
                 <h2>Formação Académica</h2>
 
@@ -470,7 +657,13 @@
                     <div class="edu-date">setembro 2002 - julho 2014</div>
                 </div>
             </div>
+
+            <div class="cta">
+                <div class="cta-question">À procura de uma profissional organizada, responsável e versátil?</div>
+                <div class="cta-answer">Terei todo o gosto em conversar consigo. &nbsp;·&nbsp; verbnii_24@hotmail.com &nbsp;·&nbsp; anaverbnii.me</div>
+            </div>
         </main>
     </div>
+
 </body>
 </html>
