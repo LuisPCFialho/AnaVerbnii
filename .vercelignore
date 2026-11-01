@@ -1,0 +1,5 @@
+# Fora do deploy: backups, CV antigos e fontes nao referenciados pelo site
+*.bak
+*.docx
+CV Ana-Maria Verbnii.html
+Foto curriculo.png
